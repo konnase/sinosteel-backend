@@ -1,5 +1,6 @@
 package com.sinosteel;
 
+import com.sinosteel.repository.BaseRepositoryFactoryBean;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -10,7 +11,6 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.sinosteel.framework.core.base.repository.BaseRepositoryFactoryBean;
 
 @SpringBootApplication
 @EnableAutoConfiguration

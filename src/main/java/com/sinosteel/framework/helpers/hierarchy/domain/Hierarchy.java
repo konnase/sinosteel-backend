@@ -1,12 +1,13 @@
 package com.sinosteel.framework.helpers.hierarchy.domain;
 
+import com.sinosteel.domain.BaseEntity;
+
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Transient;
 
-import com.sinosteel.framework.core.base.domain.BaseEntity;
 
 @MappedSuperclass
 public class Hierarchy<T extends Hierarchy<T>> extends BaseEntity

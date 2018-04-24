@@ -2,10 +2,10 @@ package com.sinosteel.framework.core.web;
 
 import java.util.List;
 
+import com.sinosteel.domain.User;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.alibaba.fastjson.JSONObject;
-import com.sinosteel.framework.system.basic.domain.User;
 
 public class Request 
 {

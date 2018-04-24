@@ -2,12 +2,12 @@ package com.sinosteel.framework.system.basic.mapper;
 
 import java.util.List;
 
+import com.sinosteel.domain.Organization;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Select;
 
-import com.sinosteel.framework.system.basic.domain.Organization;
 
 @Mapper
 public interface UserMapper 

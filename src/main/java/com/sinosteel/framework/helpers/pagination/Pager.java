@@ -6,6 +6,6 @@ public class Pager implements Serializable
 {
 	private static final long serialVersionUID = -7767180418198708899L;
 
-	public int pageSize = 3;
+	public int pageSize = 10;
 	public int current = 1;
 }

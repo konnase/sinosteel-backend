@@ -1,0 +1,129 @@
+2018-04-24 13:45:11.467  INFO 56623 --- [main] com.sinosteel.FrameworkApplication       : Starting FrameworkApplication on ChundeMacBook-Pro.local with PID 56623 (/Users/konnase/workspace/sinosteel-dev/server/framework/target/classes started by konnase in /Users/konnase/workspace/sinosteel-dev/server/framework)
+2018-04-24 13:45:11.473  INFO 56623 --- [main] com.sinosteel.FrameworkApplication       : No active profile set, falling back to default profiles: default
+2018-04-24 13:45:11.593  INFO 56623 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4d20d457: startup date [Tue Apr 24 13:45:11 CST 2018]; root of context hierarchy
+2018-04-24 13:45:13.910  INFO 56623 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1ac4e9bb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 13:45:13.960  INFO 56623 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [class org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$63d71fd9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 13:45:13.984  INFO 56623 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration' of type [class org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$$EnhancerBySpringCGLIB$$584ae47d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 13:45:14.161  INFO 56623 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.cache.CONFIGURATION_PROPERTIES' of type [class org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 13:45:14.175  INFO 56623 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers' of type [class org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 13:45:14.178  INFO 56623 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration' of type [class org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration$$EnhancerBySpringCGLIB$$8dc80d7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 13:45:14.191  INFO 56623 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration$RedisConfiguration' of type [class org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration$RedisConfiguration$$EnhancerBySpringCGLIB$$60676f48] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 13:45:14.209  INFO 56623 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration' of type [class org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration$$EnhancerBySpringCGLIB$$105c14f7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 13:45:14.236  INFO 56623 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.autoconfigure.redis.RedisProperties' of type [class org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 13:45:14.242  INFO 56623 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration$RedisPooledConnectionConfiguration' of type [class org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration$RedisPooledConnectionConfiguration$$EnhancerBySpringCGLIB$$444c42af] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 13:45:14.294  INFO 56623 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'redisConnectionFactory' of type [class org.springframework.data.redis.connection.jedis.JedisConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 13:45:14.327  INFO 56623 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'redisTemplate' of type [class org.springframework.data.redis.core.RedisTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 13:45:14.347  INFO 56623 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'cacheManager' of type [class org.springframework.data.redis.cache.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 13:45:14.349  INFO 56623 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'cacheAutoConfigurationValidator' of type [class org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 13:45:14.783  INFO 56623 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8000 (http)
+2018-04-24 13:45:14.806  INFO 56623 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2018-04-24 13:45:14.810  INFO 56623 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.33
+2018-04-24 13:45:15.271  INFO 56623 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-04-24 13:45:15.282  INFO 56623 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-04-24 13:45:15.283  INFO 56623 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3694 ms
+2018-04-24 13:45:15.864  INFO 56623 --- [localhost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'statViewServlet' to [/druid/*]
+2018-04-24 13:45:15.867  INFO 56623 --- [localhost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2018-04-24 13:45:15.871  INFO 56623 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-24 13:45:15.872  INFO 56623 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-24 13:45:15.873  INFO 56623 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-24 13:45:15.874  INFO 56623 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-24 13:45:15.875  INFO 56623 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'webStatFilter' to urls: [/*]
+2018-04-24 13:45:15.876  INFO 56623 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'corsFilter' to: [/*]
+2018-04-24 13:45:16.415  WARN 56623 --- [main] o.a.tomcat.jdbc.pool.ConnectionPool      : maxIdle is larger than maxActive, setting maxIdle to: 20
+2018-04-24 13:45:18.243  INFO 56623 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-04-24 13:45:18.263  INFO 56623 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-04-24 13:45:18.408  INFO 56623 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {4.3.11.Final}
+2018-04-24 13:45:18.411  INFO 56623 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-04-24 13:45:18.414  INFO 56623 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-04-24 13:45:18.729  INFO 56623 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-04-24 13:45:18.835  INFO 56623 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-04-24 13:45:19.082  INFO 56623 --- [main] o.h.h.i.ast.ASTQueryTranslatorFactory    : HHH000397: Using ASTQueryTranslatorFactory
+2018-04-24 13:45:19.598  INFO 56623 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2018-04-24 13:45:19.598  INFO 56623 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000102: Fetching database metadata
+2018-04-24 13:45:19.600  INFO 56623 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000396: Updating schema
+2018-04-24 13:45:19.693  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: framework.tbl_milestone
+2018-04-24 13:45:19.694  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [created_time, code, altered_time, altered_user_id, project_id, created_user_id, name, milestone_name, id, milestone_time, status]
+2018-04-24 13:45:19.694  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: [fk_jlgy4naiuflxclsndbgp8ctu8]
+2018-04-24 13:45:19.695  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [fk_jlgy4naiuflxclsndbgp8ctu8, primary]
+2018-04-24 13:45:19.742  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: framework.tbl_project
+2018-04-24 13:45:19.743  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [created_time, actual_duration, code, altered_user_id, created_user_id, completed, project_name, start_time, altered_time, name, expected_duration, comment, location, id, director_id]
+2018-04-24 13:45:19.744  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: []
+2018-04-24 13:45:19.745  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary]
+2018-04-24 13:45:19.773  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: framework.tbl_sys_function
+2018-04-24 13:45:19.773  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [created_time, code, altered_time, function_code, function_string, altered_user_id, created_user_id, name, function_path, id, menu_id]
+2018-04-24 13:45:19.773  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: [fk_itqdcta4ccyss9hycawsgucrm]
+2018-04-24 13:45:19.774  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [fk_itqdcta4ccyss9hycawsgucrm, primary]
+2018-04-24 13:45:19.811  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: framework.tbl_sys_menu
+2018-04-24 13:45:19.811  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [created_time, code, menu_icon, module_id, altered_time, altered_user_id, parent_id, created_user_id, name, menu_path, id]
+2018-04-24 13:45:19.812  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: []
+2018-04-24 13:45:19.812  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary]
+2018-04-24 13:45:19.851  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: framework.tbl_sys_module
+2018-04-24 13:45:19.853  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [created_time, code, altered_time, altered_user_id, created_user_id, name, id, module_path, module_icon]
+2018-04-24 13:45:19.854  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: []
+2018-04-24 13:45:19.855  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary]
+2018-04-24 13:45:19.880  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: framework.tbl_sys_operation_log
+2018-04-24 13:45:19.881  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [created_time, code, file_names, response_status, altered_user_id, created_user_id, params, uri, altered_time, date_time, name, client, id, username]
+2018-04-24 13:45:19.881  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: []
+2018-04-24 13:45:19.881  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary]
+2018-04-24 13:45:19.907  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: framework.tbl_sys_organization
+2018-04-24 13:45:19.908  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [created_time, code, altered_time, altered_user_id, parent_id, created_user_id, name, description, id, organization_name]
+2018-04-24 13:45:19.908  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: []
+2018-04-24 13:45:19.908  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary]
+2018-04-24 13:45:19.933  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: framework.tbl_sys_role
+2018-04-24 13:45:19.933  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [role_name, role_string, created_time, code, altered_time, altered_user_id, created_user_id, name, description, id]
+2018-04-24 13:45:19.933  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: []
+2018-04-24 13:45:19.934  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary]
+2018-04-24 13:45:19.962  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: framework.tbl_sys_role_function
+2018-04-24 13:45:19.963  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [role_id, function_id]
+2018-04-24 13:45:19.963  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: [fk_2r3mx5cv4q1eu6i7oex4a7y65, fk_tgfnmsm51p1heid7qd9wcghxj]
+2018-04-24 13:45:19.964  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [fk_2r3mx5cv4q1eu6i7oex4a7y65, fk_tgfnmsm51p1heid7qd9wcghxj]
+2018-04-24 13:45:19.986  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: framework.tbl_sys_role_user
+2018-04-24 13:45:19.987  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [user_id, role_id]
+2018-04-24 13:45:19.987  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: [fk_44m1qqntwycmydgmmdcmagdn3, fk_4rbt5lhjoqj0r268ur0gcurf2]
+2018-04-24 13:45:19.988  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [fk_44m1qqntwycmydgmmdcmagdn3, fk_4rbt5lhjoqj0r268ur0gcurf2]
+2018-04-24 13:45:20.013  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: framework.tbl_sys_user
+2018-04-24 13:45:20.013  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [created_time, password, code, salt, altered_time, altered_user_id, created_user_id, name, id, username]
+2018-04-24 13:45:20.013  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: []
+2018-04-24 13:45:20.014  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary]
+2018-04-24 13:45:20.033  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: framework.tbl_topic
+2018-04-24 13:45:20.034  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [created_time, code, altered_user_id, created_user_id, start_time, altered_time, project_id, name, topic_name, comment, location, id, director_id]
+2018-04-24 13:45:20.035  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: [fk_o8dc6e1w8u4ci53fjycq0fm3q]
+2018-04-24 13:45:20.035  INFO 56623 --- [main] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [fk_o8dc6e1w8u4ci53fjycq0fm3q, primary]
+2018-04-24 13:45:20.037  INFO 56623 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000232: Schema update complete
+2018-04-24 13:45:21.745  INFO 56623 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4d20d457: startup date [Tue Apr 24 13:45:11 CST 2018]; root of context hierarchy
+2018-04-24 13:45:21.859  INFO 56623 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/services/queryAllTopics]}" onto public com.sinosteel.framework.core.web.Response com.sinosteel.web.TopicController.queryAllTopics(com.sinosteel.framework.core.web.Request)
+2018-04-24 13:45:21.860  INFO 56623 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/services/addTopic]}" onto public com.sinosteel.framework.core.web.Response com.sinosteel.web.TopicController.addTopic(com.sinosteel.framework.core.web.Request)
+2018-04-24 13:45:21.861  INFO 56623 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/services/queryTopics]}" onto public com.sinosteel.framework.core.web.Response com.sinosteel.web.TopicController.queryTopics(com.sinosteel.framework.core.web.Request)
+2018-04-24 13:45:21.862  INFO 56623 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/services/deleteTopic]}" onto public com.sinosteel.framework.core.web.Response com.sinosteel.web.TopicController.deleteTopic(com.sinosteel.framework.core.web.Request)
+2018-04-24 13:45:21.863  INFO 56623 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/services/editTopic]}" onto public com.sinosteel.framework.core.web.Response com.sinosteel.web.TopicController.editTopic(com.sinosteel.framework.core.web.Request)
+2018-04-24 13:45:21.869  INFO 56623 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/services/queryProjects]}" onto public com.sinosteel.framework.core.web.Response com.sinosteel.web.ProjectController.queryProjects(com.sinosteel.framework.core.web.Request)
+2018-04-24 13:45:21.873  INFO 56623 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/services/queryAllProjects]}" onto public com.sinosteel.framework.core.web.Response com.sinosteel.web.ProjectController.queryAllProjects(com.sinosteel.framework.core.web.Request)
+2018-04-24 13:45:21.876  INFO 56623 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/services/addProject]}" onto public com.sinosteel.framework.core.web.Response com.sinosteel.web.ProjectController.addProject(com.sinosteel.framework.core.web.Request)
+2018-04-24 13:45:21.877  INFO 56623 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/services/editProject]}" onto public com.sinosteel.framework.core.web.Response com.sinosteel.web.ProjectController.editProject(com.sinosteel.framework.core.web.Request)
+2018-04-24 13:45:21.878  INFO 56623 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/services/deleteProject]}" onto public com.sinosteel.framework.core.web.Response com.sinosteel.web.ProjectController.deleteProject(com.sinosteel.framework.core.web.Request)
+2018-04-24 13:45:21.888  INFO 56623 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/services/queryMilestones]}" onto public com.sinosteel.framework.core.web.Response com.sinosteel.web.MilestoneController.queryMilestones(com.sinosteel.framework.core.web.Request)
+2018-04-24 13:45:21.889  INFO 56623 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/services/addMilestone]}" onto public com.sinosteel.framework.core.web.Response com.sinosteel.web.MilestoneController.addMilestone(com.sinosteel.framework.core.web.Request)
+2018-04-24 13:45:21.897  INFO 56623 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/services/editMilestone]}" onto public com.sinosteel.framework.core.web.Response com.sinosteel.web.MilestoneController.editMilestone(com.sinosteel.framework.core.web.Request)
+2018-04-24 13:45:21.897  INFO 56623 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/services/deleteMilestone]}" onto public com.sinosteel.framework.core.web.Response com.sinosteel.web.MilestoneController.deleteMilestone(com.sinosteel.framework.core.web.Request)
+2018-04-24 13:45:21.901  INFO 56623 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-24 13:45:21.902  INFO 56623 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-24 13:45:21.943  INFO 56623 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 13:45:21.944  INFO 56623 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 13:45:21.968  INFO 56623 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandler
+2018-04-24 13:45:21.994  INFO 56623 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 13:45:22.235  INFO 56623 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-04-24 13:45:22.713  WARN 56623 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1451, SQLState: 23000
+2018-04-24 13:45:22.714 ERROR 56623 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Cannot delete or update a parent row: a foreign key constraint fails (`framework`.`tbl_sys_role_function`, CONSTRAINT `FK_tgfnmsm51p1heid7qd9wcghxj` FOREIGN KEY (`function_id`) REFERENCES `tbl_sys_function` (`id`))
+2018-04-24 13:45:22.715  INFO 56623 --- [main] o.h.e.j.b.internal.AbstractBatchImpl     : HHH000010: On release of batch it still contained JDBC statements
+2018-04-24 13:45:22.718  WARN 56623 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 1451, SQLState: 23000
+2018-04-24 13:45:22.718  WARN 56623 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Cannot delete or update a parent row: a foreign key constraint fails (`framework`.`tbl_sys_role_function`, CONSTRAINT `FK_tgfnmsm51p1heid7qd9wcghxj` FOREIGN KEY (`function_id`) REFERENCES `tbl_sys_function` (`id`))
+2018-04-24 13:45:22.915  INFO 56623 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8000 (http)
+2018-04-24 13:45:22.924  INFO 56623 --- [main] com.sinosteel.FrameworkApplication       : Started FrameworkApplication in 12.235 seconds (JVM running for 16.167)
+2018-04-24 13:47:24.279  INFO 56623 --- [http-nio-8000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-04-24 13:47:24.282  INFO 56623 --- [http-nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-24 13:47:24.336  INFO 56623 --- [http-nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 54 ms
+2018-04-24 13:49:33.715  INFO 56623 --- [Thread-6] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4d20d457: startup date [Tue Apr 24 13:45:11 CST 2018]; root of context hierarchy
+2018-04-24 13:49:33.723  INFO 56623 --- [Thread-6] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-04-24 13:49:33.750  INFO 56623 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
