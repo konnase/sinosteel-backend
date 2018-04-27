@@ -5,6 +5,8 @@ import java.util.List;
 
 import com.sinosteel.domain.Organization;
 import com.sinosteel.domain.User;
+import com.sinosteel.repository.OrganizationRepository;
+import com.sinosteel.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,12 +15,10 @@ import com.alibaba.fastjson.JSONObject;
 import com.sinosteel.framework.helpers.hierarchy.helper.HierarchyHelper;
 import com.sinosteel.framework.helpers.pagination.PageResult;
 import com.sinosteel.framework.helpers.pagination.Pager;
-import com.sinosteel.framework.system.auth.mapper.DeleteAuthorizationMapper;
-import com.sinosteel.framework.system.auth.mapper.EditAuthorizationMapper;
-import com.sinosteel.framework.system.auth.mapper.QueryAuthorizationMapper;
-import com.sinosteel.framework.system.basic.mapper.OrganizationUserMapper;
-import com.sinosteel.repository.OrganizationRepository;
-import com.sinosteel.repository.UserRepository;
+import com.sinosteel.framework.mybatis.DeleteAuthorizationMapper;
+import com.sinosteel.framework.mybatis.EditAuthorizationMapper;
+import com.sinosteel.framework.mybatis.QueryAuthorizationMapper;
+import com.sinosteel.framework.mybatis.OrganizationUserMapper;
 import com.sinosteel.framework.utils.json.JsonUtil;
 import com.sinosteel.framework.utils.string.StringUtil;
 

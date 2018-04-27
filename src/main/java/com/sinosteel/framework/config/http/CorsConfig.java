@@ -7,6 +7,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 /*
+只要协议、域名、端口有任何一个不同，都被当作是不同的域，之间的请求就是跨域操作
 使用Filter 处理跨域请求，即CORS（跨来源资源共享）。
  */
 @Configuration

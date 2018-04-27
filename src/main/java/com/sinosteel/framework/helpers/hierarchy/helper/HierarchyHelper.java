@@ -19,11 +19,15 @@ public class HierarchyHelper
 		{
 			boolean root = true;
 			List<T> layer = new ArrayList<T>();
-			
+
+			//nodes是一组menus
 			for(T node : nodes)
 			{
 				String parentId = node.getParentId();
-				
+				/*
+				如果node存在父节点，则将父节点加入layer中，并将node加入parent的子节点上；将root置为false，表示node不是根节点
+				如果不存在父节点，即node就是根节点，将node加入到layer中，root依然为true
+				 */
 				if(!StringUtil.isEmpty(parentId))
 				{
 					T parent = findHierarchyById(parentId, layer);
@@ -49,7 +53,7 @@ public class HierarchyHelper
 					layer.add(node);
 				}
 			}
-			
+			//如果root为true，则nodes中所有menus都是根节点，则返回layer；否则继续找根节点
 			return root ? layer : getHierarchiesBottomUp(layer, hierarchyRepository);
 		}
 		catch(Exception e)

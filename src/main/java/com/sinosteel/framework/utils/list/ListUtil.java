@@ -5,6 +5,7 @@ import java.util.List;
 
 public class ListUtil
 {
+	//判断contents中是否包含content
 	public static boolean contains(List<String> contents, String content)
 	{
 		for(int i = 0; i < contents.size(); i++)

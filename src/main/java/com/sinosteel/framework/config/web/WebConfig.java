@@ -19,7 +19,7 @@ import com.sinosteel.framework.core.web.RequestArgumentResolver;
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter
 {
-	//自定义参数解析器，RequestArgumentResolver主要负责执行controller前参数nju准备工作.
+	//自定义参数解析器，RequestArgumentResolver主要负责执行controller前参数的准备工作.
 	@Bean
 	public RequestArgumentResolver requestArgumentResolver()
 	{

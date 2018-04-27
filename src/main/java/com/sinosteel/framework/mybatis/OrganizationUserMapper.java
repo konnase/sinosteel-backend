@@ -1,4 +1,4 @@
-package com.sinosteel.framework.system.basic.mapper;
+package com.sinosteel.framework.mybatis;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.annotations.Update;
 
+//mybatis使用@Mapper注解将自动生成OrganizationUserMapper的实现类
 @Mapper
 public interface OrganizationUserMapper 
 {

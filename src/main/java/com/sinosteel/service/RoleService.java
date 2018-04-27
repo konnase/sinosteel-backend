@@ -14,9 +14,9 @@ import org.springframework.stereotype.Service;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
-import com.sinosteel.framework.system.auth.mapper.DeleteAuthorizationMapper;
-import com.sinosteel.framework.system.auth.mapper.EditAuthorizationMapper;
-import com.sinosteel.framework.system.auth.mapper.QueryAuthorizationMapper;
+import com.sinosteel.framework.mybatis.DeleteAuthorizationMapper;
+import com.sinosteel.framework.mybatis.EditAuthorizationMapper;
+import com.sinosteel.framework.mybatis.QueryAuthorizationMapper;
 import com.sinosteel.repository.FunctionRepository;
 import com.sinosteel.repository.OrganizationRepository;
 import com.sinosteel.framework.utils.json.JsonUtil;

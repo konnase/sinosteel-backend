@@ -25,8 +25,9 @@ public class RequestArgumentResolver implements HandlerMethodArgumentResolver
 	private UserService userService;
 	
     @Override
-    public boolean supportsParameter(MethodParameter methodParameter) 
+    public boolean supportsParameter(MethodParameter methodParameter)
     {
+    	System.out.println("请求是否为Request类型："+methodParameter.getParameterType().equals(Request.class));
     	//如果controller的形参为Request对象，则返回true，表示需要处理该参数分解，调用下面的resolveArgument处理
         return methodParameter.getParameterType().equals(Request.class);
     }
@@ -55,23 +56,6 @@ public class RequestArgumentResolver implements HandlerMethodArgumentResolver
         JSONObject params = JSONObject.parseObject(paramsString);
         
         request.setParams(params);
-        
-        String totalFilesInfo = webRequest.getParameter("totalFiles");
-        if(!StringUtil.isEmpty(totalFilesInfo) && !"undefined".equals(totalFilesInfo))
-        {
-        	MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) webRequest.getNativeRequest();
-        	List<MultipartFile> files = new ArrayList<MultipartFile>();
-        	
-    		int totalFiles = Integer.parseInt(totalFilesInfo);
-    		for(int i = 0; i < totalFiles; i++)
-    		{
-    			MultipartFile file = multipartHttpServletRequest.getFile("file" + i);
-    			
-    			files.add(file);
-    		}
-    		
-    		request.setFiles(files);
-        }
 
         return request;
     }

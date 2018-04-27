@@ -65,6 +65,7 @@ public class BaseRepositoryImpl<T extends BaseEntity> extends SimpleJpaRepositor
 
 	@SuppressWarnings("unchecked")
 	@Override
+	//U在这里表示泛型，是指BaseRepositoryImpl中未定义类；与T不同的是，T是限定为BaseEntity的子类，而U可以指代任何类
 	public <U> PageResult<U> executeSql(String sql, HashMap<String, Object> paramsMap, Pager pager)
 	{
 		Query query = this.entityManager.createNativeQuery(sql);

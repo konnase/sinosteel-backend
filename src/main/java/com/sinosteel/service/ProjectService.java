@@ -31,6 +31,7 @@ public class ProjectService extends BaseService<Project>
 		
 		if(params != null)
 		{
+			System.out.println("请求传入的参数："+params.toJSONString());
 			JSONArray startTime = params.getJSONArray("startTime");
 			if(startTime != null && startTime.size() == 2)
 			{
@@ -79,8 +80,15 @@ public class ProjectService extends BaseService<Project>
 		}
 		
 		hqlBuilder.append("ORDER BY CREATED_TIME DESC ");
-		
-		Pager pager = JSONObject.toJavaObject(params.getJSONObject("pagination"), Pager.class);
+
+		Pager pager = new Pager();
+		try {
+			pager = JSONObject.toJavaObject(params.getJSONObject("pagination"), Pager.class);
+		}
+		catch (Exception e){
+			System.out.println("没找到pager，遇到错误啦");
+			System.out.println(e);
+		}
 		PageResult<Project> pageResult = projectRepository.executeHql(hqlBuilder.toString(), paramsMap, pager);
 		
 		return pageResult.toJSONObject();

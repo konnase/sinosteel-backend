@@ -9,7 +9,7 @@ import java.util.List;
 import com.sinosteel.domain.Function;
 import com.sinosteel.domain.Menu;
 import com.sinosteel.domain.Module;
-import com.sinosteel.framework.system.basic.mapper.FunctionMapper;
+import com.sinosteel.framework.mybatis.FunctionMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -75,7 +75,8 @@ public class FunctionService extends BaseService<Function>
 	}
 	
 	public JSONArray getFunctionsHierarchies(List<Function> functions)
-	{	
+	{
+		//根据用户的功能查出这些功能所属的所有menu
 		List<Menu> leafMenus = new ArrayList<Menu>();
 		for(Function function : functions)
 		{
@@ -87,8 +88,12 @@ public class FunctionService extends BaseService<Function>
 			}
 		}
 
+		//找到menus所有的根节点
 		List<Menu> menuHierarchies = HierarchyHelper.getHierarchiesBottomUp(leafMenus, menuRepository);
-		
+
+		/*
+		对所有menu根节点，找到他们所属的modules
+		 */
 		List<Module> modules = new ArrayList<Module>();
 		for(Menu menuHierarchy : menuHierarchies)
 		{
@@ -137,6 +142,7 @@ public class FunctionService extends BaseService<Function>
 		JSONArray modulesJsonArray = JSONArray.parseArray(jsonString);
 		List<Module> modulesConfig = JsonUtil.toObjects(modulesJsonArray, Module.class);
 
+		//每次
 		functionRepository.deleteAll();
 		menuRepository.deleteAll();
 		moduleRepository.deleteAll();

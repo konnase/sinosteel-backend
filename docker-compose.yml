@@ -1,0 +1,18 @@
+version: '3.2'
+
+services:
+  mysql:
+    image: 'mysql:latest'
+    ports:
+      - '33006:3306'
+    volumes:
+      - '~/mnt/mysql/:/var/lib/mysql/'
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql
+      - MYSQL_DATABASE=fitech
+#  redis:
+#    image: 'redis:latest'
+#    environment:
+#      - ALLOW_EMPTY_PASSWORD=yes
+#    ports:
+#      - '6379:6379'

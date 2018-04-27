@@ -1,4 +1,4 @@
-package com.sinosteel.framework.system.basic.mapper;
+package com.sinosteel.framework.mybatis;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;

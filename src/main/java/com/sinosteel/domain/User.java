@@ -56,6 +56,7 @@ public class User extends BaseEntity
 		this.roles = roles;
 	}
 
+	//根据用户的角色给用户赋功能
 	public List<Function> getFunctions()
 	{
 		List<Role> roles = this.roles;
