@@ -9,7 +9,6 @@ import com.sinosteel.framework.utils.date.DateUtil;
 import com.sinosteel.framework.utils.string.StringUtil;
 import com.sinosteel.repository.BaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,9 +21,6 @@ import java.util.UUID;
 public class BaseService<T extends BaseEntity>
 {
 	public BaseRepository<T> baseRepository;
-	
-	@Autowired
-	public RedisTemplate<?, ?> redisTemplate;
 	
 	@Autowired
 	public void setBaseRepository(BaseRepository<T> baseRepository)
