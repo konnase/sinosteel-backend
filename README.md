@@ -20,8 +20,8 @@ framework-example中的将Project和Knowledge整合进framework中，代码结�
 │           │   │   ├── listener           --定义ApplicationListener
 │           │   │   └── web                --定义Request和Response类
 │           │   ├── helpers
+│           │   │   ├── hibernate          --Hibernate创建表时默认的策略
 │           │   │   ├── hierarchy          --特殊的有层次结构的类
-│           │   │   │   ├── hibernate      --Hibernate创建表时默认的策略
 │           │   │   │   ├── domain
 │           │   │   │   └── helper         --提供对Hierarchy类的基本操作
 │           │   │   └── pagination         --分页
@@ -103,7 +103,7 @@ database=mysql
 spring.datasource.schema=classpath*:db/${database}/schema.sql
 spring.datasource.data=classpath*:db/${database}/data.sql
 spring.datasource.sql-script-encoding=utf-8
-#首次运行的时候加载db.db.{data.sql, schema.sql}脚本。之后可设置为false
+#首次运行的时候加载db.mysql.{data.sql, schema.sql}脚本。之后可设置为false
 spring.datasource.initialize=true
 ```
-则在项目启动时自动加载数据库，首次加载后，再次启动项目时将 `spring.datasource.initialize`设置为false
+则在项目启动时自动加载数据库。首次加载后，再次启动项目时将 `spring.datasource.initialize`设置为false，不然重复添加约束会产生问题

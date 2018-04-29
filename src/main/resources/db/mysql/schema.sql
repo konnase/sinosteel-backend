@@ -23,6 +23,407 @@ SET NAMES utf8mb4;
 
 -- --------------------------------------------------------
 
+--
+-- 表的结构 `tbl_milestone`
+--
+
+
+CREATE TABLE IF NOT EXISTS  `TBL_MILESTONE` (
+  `id` varchar(255) COLLATE utf8_bin NOT NULL,
+  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `milestone_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `project_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `milestone_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- 表的结构 `tbl_project`
+--
+
+CREATE TABLE IF NOT EXISTS  `TBL_PROJECT` (
+  `id` varchar(255) COLLATE utf8_bin NOT NULL,
+  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `actual_duration` int(255) DEFAULT NULL,
+  `comment` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `completed` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `director_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `expected_duration` int(255) DEFAULT NULL,
+  `location` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `project_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `start_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- 表的结构 `tbl_standard`
+--
+CREATE TABLE IF NOT EXISTS  `TBL_STANDARD` (
+  `id` varchar(255) COLLATE utf8_bin NOT NULL,
+  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `issue_date` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `summary` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `type` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- 表的结构 `tbl_standard_resource`
+--
+CREATE TABLE IF NOT EXISTS  `TBL_STANDARD_RESOURCE` (
+  `id` varchar(255) COLLATE utf8_bin NOT NULL,
+  `standard_id` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `tbl_sys_delete_authorization`
+--
+CREATE TABLE IF NOT EXISTS `TBL_SYS_DELETE_AUTHORIZATION` (
+  `organization_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `role_id` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- 表的结构 `tbl_sys_edit_authorization`
+--
+CREATE TABLE IF NOT EXISTS  `TBL_SYS_EDIT_AUTHORIZATION` (
+  `organization_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `role_id` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- 表的结构 `tbl_sys_file`
+--
+CREATE TABLE IF NOT EXISTS  `TBL_SYS_FILE` (
+  `id` varchar(255) COLLATE utf8_bin NOT NULL,
+  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `file_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `file_path` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `tbl_sys_function`
+--
+CREATE TABLE IF NOT EXISTS  `TBL_SYS_FUNCTION` (
+  `id` varchar(255) COLLATE utf8_bin NOT NULL,
+  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `function_code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `menu_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `function_path` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `function_string` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- 表的结构 `tbl_sys_menu`
+--
+CREATE TABLE IF NOT EXISTS  `TBL_SYS_MENU` (
+  `ID` varchar(100) COLLATE utf8_bin NOT NULL,
+  `CODE` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `MENU_PATH` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `MENU_ICON` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `MODULE_ID` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `PARENT_ID` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- 表的结构 `tbl_sys_module`
+--
+CREATE TABLE IF NOT EXISTS  `TBL_SYS_MODULE` (
+  `id` varchar(255) COLLATE utf8_bin NOT NULL,
+  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `module_icon` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `module_path` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- 表的结构 `tbl_sys_operation_log`
+--
+CREATE TABLE IF NOT EXISTS  `TBL_SYS_OPERATION_LOG` (
+  `id` varchar(255) COLLATE utf8_bin NOT NULL,
+  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `client` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `date_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `file_names` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `params` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `response_status` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `uri` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `username` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `tbl_sys_organization`
+--
+CREATE TABLE IF NOT EXISTS  `TBL_SYS_ORGANIZATION` (
+  `id` varchar(255) COLLATE utf8_bin NOT NULL,
+  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `organization_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `parent_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- 表的结构 `tbl_sys_organization_user`
+--
+CREATE TABLE IF NOT EXISTS  `TBL_SYS_ORGANIZATION_USER` (
+  `organization_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `is_principal` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- 表的结构 `tbl_sys_query_authorization`
+--
+CREATE TABLE IF NOT EXISTS  `TBL_SYS_QUERY_AUTHORIZATION` (
+  `organization_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `role_id` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- 表的结构 `tbl_sys_role`
+--
+CREATE TABLE IF NOT EXISTS  `TBL_SYS_ROLE` (
+  `id` varchar(255) COLLATE utf8_bin NOT NULL,
+  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `role_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `role_string` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- 表的结构 `tbl_sys_role_function`
+--
+DROP TABLE IF EXISTS `TBL_SYS_ROLE_FUNCTION`;
+
+CREATE TABLE IF NOT EXISTS  `TBL_SYS_ROLE_FUNCTION` (
+  `function_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `role_id` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- CREATE TABLE IF NOT EXISTS  `TBL_SYS_ROLE_FUNCTION` (
+--   `function_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+--   `role_id` varchar(255) COLLATE utf8_bin DEFAULT NULL
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- 表的结构 `tbl_sys_role_user`
+--
+CREATE TABLE IF NOT EXISTS  `TBL_SYS_ROLE_USER` (
+  `user_id` varchar(255) COLLATE utf8_bin NOT NULL,
+  `role_id` varchar(255) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- 表的结构 `tbl_sys_user`
+--
+CREATE TABLE IF NOT EXISTS  `TBL_SYS_USER` (
+  `ID` varchar(100) COLLATE utf8_bin NOT NULL,
+  `CODE` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `USERNAME` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `PASSWORD` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `salt` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- 表的结构 `tbl_topic`
+--
+CREATE TABLE IF NOT EXISTS  `TBL_TOPIC` (
+  `id` varchar(255) COLLATE utf8_bin NOT NULL,
+  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `project_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `topic_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `comment` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `director_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `location` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `start_time` varchar(255) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+ --
+ -- Indexes for table `TBL_MILESTONE`
+ --
+ ALTER TABLE `TBL_MILESTONE`
+   ADD PRIMARY KEY (`id`),
+   ADD KEY `FK_jlgy4naiuflxclsndbgp8ctu8` (`project_id`);
+
+ --
+ -- Indexes for table `TBL_project`
+ --
+ ALTER TABLE `TBL_PROJECT`
+   ADD PRIMARY KEY (`id`);
+
+ --
+ -- Indexes for table `TBL_standard`
+ --
+ ALTER TABLE `TBL_STANDARD`
+   ADD PRIMARY KEY (`id`);
+
+ --
+ -- Indexes for table `TBL_STANDARD_resource`
+ --
+ ALTER TABLE `TBL_STANDARD_RESOURCE`
+   ADD PRIMARY KEY (`id`),
+   ADD KEY `FK_n0r46alou8q4tpjpnctfpabjo` (`standard_id`);
+
+ --
+ -- Indexes for table `TBL_sys_file`
+ --
+ ALTER TABLE `TBL_SYS_FILE`
+   ADD PRIMARY KEY (`id`);
+
+ --
+ -- Indexes for table `TBL_SYS_function`
+ --
+ ALTER TABLE `TBL_SYS_FUNCTION`
+   ADD PRIMARY KEY (`id`),
+   ADD KEY `FK_itqdcta4ccyss9hycawsgucrm` (`menu_id`);
+
+ --
+ -- Indexes for table `TBL_SYS_menu`
+ --
+ ALTER TABLE `TBL_SYS_MENU`
+   ADD PRIMARY KEY (`ID`),
+   ADD KEY `FK_i69suv95ch4ud7irsd1lregqy` (`MODULE_ID`);
+
+ --
+ -- Indexes for table `TBL_SYS_module`
+ --
+ ALTER TABLE `TBL_SYS_MODULE`
+   ADD PRIMARY KEY (`id`);
+
+ --
+ -- Indexes for table `TBL_SYS_operation_log`
+ --
+ ALTER TABLE `TBL_SYS_OPERATION_LOG`
+   ADD PRIMARY KEY (`id`);
+
+ --
+ -- Indexes for table `TBL_SYS_organization`
+ --
+ ALTER TABLE `TBL_SYS_ORGANIZATION`
+   ADD PRIMARY KEY (`id`);
+
+ --
+ -- Indexes for table `TBL_SYS_ORGANIZATION_user`
+ --
+ ALTER TABLE `TBL_SYS_ORGANIZATION_USER`
+   ADD KEY `FK_1xf5y20elkka13pumi8r2f8r4` (`organization_id`),
+   ADD KEY `FK_syj426syoggn9kae85kspa0se` (`user_id`);
+
+ --
+ -- Indexes for table `TBL_SYS_ROLE`
+ --
+ ALTER TABLE `TBL_SYS_ROLE`
+   ADD PRIMARY KEY (`id`);
+
+ --
+ -- Indexes for table `TBL_SYS_ROLE_FUNCTION`
+ --
+ ALTER TABLE `TBL_SYS_ROLE_FUNCTION`
+   ADD KEY `FK_tgfnmsm51p1heid7qd9wcghxj` (`function_id`),
+   ADD KEY `FK_2r3mx5cv4q1eu6i7oex4a7y65` (`role_id`);
+
+ --
+ -- Indexes for table `TBL_SYS_role_user`
+ --
+ ALTER TABLE `TBL_SYS_ROLE_USER`
+   ADD KEY `FK_4rbt5lhjoqj0r268ur0gcurf2` (`role_id`),
+   ADD KEY `FK_44m1qqntwycmydgmmdcmagdn3` (`user_id`);
+
+ --
+ -- Indexes for table `TBL_SYS_user`
+ --
+ ALTER TABLE `TBL_SYS_USER`
+   ADD PRIMARY KEY (`ID`);
+
+ --
+ -- Indexes for table `TBL_topic`
+ --
+ ALTER TABLE `TBL_TOPIC`
+   ADD PRIMARY KEY (`id`),
+   ADD KEY `FK_o8dc6e1w8u4ci53fjycq0fm3q` (`project_id`);
+
+ --
+ -- 限制表 `TBL_standard_RESOURCE`
+ --
+ ALTER TABLE `TBL_STANDARD_RESOURCE`
+   ADD CONSTRAINT `FK_c7j3o7u37sq49med5mw7x7qq6` FOREIGN KEY (`id`) REFERENCES `TBL_SYS_FILE` (`id`),
+   ADD CONSTRAINT `FK_n0r46alou8q4tpjpnctfpabjo` FOREIGN KEY (`standard_id`) REFERENCES `TBL_STANDARD` (`id`);
+
+ --
+ -- 限制表 `TBL_SYS_role_user`
+ --
+ ALTER TABLE `TBL_SYS_ROLE_USER`
+   ADD CONSTRAINT `FK_44m1qqntwycmydgmmdcmagdn3` FOREIGN KEY (`user_id`) REFERENCES `TBL_SYS_USER` (`ID`),
+   ADD CONSTRAINT `FK_4rbt5lhjoqj0r268ur0gcurf2` FOREIGN KEY (`role_id`) REFERENCES `TBL_SYS_ROLE` (`id`);
+
+
+
+-- --------------------------------------------------------
+
 # --
 # -- 表的结构 `act_evt_log`
 # --
@@ -495,409 +896,6 @@ SET NAMES utf8mb4;
 #   `TEXT_` varchar(4000) COLLATE utf8_bin DEFAULT NULL,
 #   `TEXT2_` varchar(4000) COLLATE utf8_bin DEFAULT NULL
 # ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `tbl_milestone`
---
-
-
-CREATE TABLE IF NOT EXISTS  `TBL_MILESTONE` (
-  `id` varchar(255) COLLATE utf8_bin NOT NULL,
-  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `milestone_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `project_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `milestone_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- 表的结构 `tbl_project`
---
-
-CREATE TABLE IF NOT EXISTS  `TBL_PROJECT` (
-  `id` varchar(255) COLLATE utf8_bin NOT NULL,
-  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `actual_duration` int(255) DEFAULT NULL,
-  `comment` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `completed` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `director_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `expected_duration` int(255) DEFAULT NULL,
-  `location` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `project_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `start_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- 表的结构 `tbl_standard`
---
-CREATE TABLE IF NOT EXISTS  `TBL_STANDARD` (
-  `id` varchar(255) COLLATE utf8_bin NOT NULL,
-  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `issue_date` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `summary` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `type` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- 表的结构 `tbl_standard_resource`
---
-CREATE TABLE IF NOT EXISTS  `TBL_STANDARD_RESOURCE` (
-  `id` varchar(255) COLLATE utf8_bin NOT NULL,
-  `standard_id` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `tbl_sys_delete_authorization`
---
-CREATE TABLE IF NOT EXISTS `TBL_SYS_DELETE_AUTHORIZATION` (
-  `organization_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `role_id` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- 表的结构 `tbl_sys_edit_authorization`
---
-CREATE TABLE IF NOT EXISTS  `TBL_SYS_EDIT_AUTHORIZATION` (
-  `organization_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `role_id` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- 表的结构 `tbl_sys_file`
---
-CREATE TABLE IF NOT EXISTS  `TBL_SYS_FILE` (
-  `id` varchar(255) COLLATE utf8_bin NOT NULL,
-  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `file_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `file_path` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `tbl_sys_function`
---
-CREATE TABLE IF NOT EXISTS  `TBL_SYS_FUNCTION` (
-  `id` varchar(255) COLLATE utf8_bin NOT NULL,
-  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `function_code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `menu_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `function_path` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `function_string` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- 表的结构 `tbl_sys_menu`
---
-CREATE TABLE IF NOT EXISTS  `TBL_SYS_MENU` (
-  `ID` varchar(100) COLLATE utf8_bin NOT NULL,
-  `CODE` varchar(100) COLLATE utf8_bin DEFAULT NULL,
-  `MENU_PATH` varchar(100) COLLATE utf8_bin DEFAULT NULL,
-  `MENU_ICON` varchar(100) COLLATE utf8_bin DEFAULT NULL,
-  `MODULE_ID` varchar(100) COLLATE utf8_bin DEFAULT NULL,
-  `PARENT_ID` varchar(100) COLLATE utf8_bin DEFAULT NULL,
-  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- 表的结构 `tbl_sys_module`
---
-CREATE TABLE IF NOT EXISTS  `TBL_SYS_MODULE` (
-  `id` varchar(255) COLLATE utf8_bin NOT NULL,
-  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `module_icon` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `module_path` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- 表的结构 `tbl_sys_operation_log`
---
-CREATE TABLE IF NOT EXISTS  `TBL_SYS_OPERATION_LOG` (
-  `id` varchar(255) COLLATE utf8_bin NOT NULL,
-  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `client` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `date_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `file_names` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `params` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `response_status` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `uri` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `username` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `tbl_sys_organization`
---
-CREATE TABLE IF NOT EXISTS  `TBL_SYS_ORGANIZATION` (
-  `id` varchar(255) COLLATE utf8_bin NOT NULL,
-  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `organization_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `parent_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `description` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- 表的结构 `tbl_sys_organization_user`
---
-CREATE TABLE IF NOT EXISTS  `TBL_SYS_ORGANIZATION_USER` (
-  `organization_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `is_principal` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- 表的结构 `tbl_sys_query_authorization`
---
-CREATE TABLE IF NOT EXISTS  `TBL_SYS_QUERY_AUTHORIZATION` (
-  `organization_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `role_id` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- 表的结构 `tbl_sys_role`
---
-CREATE TABLE IF NOT EXISTS  `TBL_SYS_ROLE` (
-  `id` varchar(255) COLLATE utf8_bin NOT NULL,
-  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `role_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `description` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `role_string` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- 表的结构 `tbl_sys_role_function`
---
-DROP TABLE IF EXISTS `TBL_SYS_ROLE_FUNCTION`;
-
-CREATE TABLE IF NOT EXISTS  `TBL_SYS_ROLE_FUNCTION` (
-  `function_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `role_id` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- CREATE TABLE IF NOT EXISTS  `TBL_SYS_ROLE_FUNCTION` (
---   `function_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
---   `role_id` varchar(255) COLLATE utf8_bin DEFAULT NULL
--- ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- 表的结构 `tbl_sys_role_user`
---
-CREATE TABLE IF NOT EXISTS  `TBL_SYS_ROLE_USER` (
-  `user_id` varchar(255) COLLATE utf8_bin NOT NULL,
-  `role_id` varchar(255) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- 表的结构 `tbl_sys_user`
---
-CREATE TABLE IF NOT EXISTS  `TBL_SYS_USER` (
-  `ID` varchar(100) COLLATE utf8_bin NOT NULL,
-  `CODE` varchar(100) COLLATE utf8_bin DEFAULT NULL,
-  `USERNAME` varchar(100) COLLATE utf8_bin DEFAULT NULL,
-  `PASSWORD` varchar(100) COLLATE utf8_bin DEFAULT NULL,
-  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `salt` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- 表的结构 `tbl_topic`
---
-CREATE TABLE IF NOT EXISTS  `TBL_TOPIC` (
-  `id` varchar(255) COLLATE utf8_bin NOT NULL,
-  `altered_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `altered_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `code` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_time` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `created_user_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `project_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `topic_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `comment` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `director_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `location` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `start_time` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
- --
- -- Indexes for table `TBL_MILESTONE`
- --
- ALTER TABLE `TBL_MILESTONE`
-   ADD PRIMARY KEY (`id`),
-   ADD KEY `FK_jlgy4naiuflxclsndbgp8ctu8` (`project_id`);
-
- --
- -- Indexes for table `TBL_project`
- --
- ALTER TABLE `TBL_PROJECT`
-   ADD PRIMARY KEY (`id`);
-
- --
- -- Indexes for table `TBL_standard`
- --
- ALTER TABLE `TBL_STANDARD`
-   ADD PRIMARY KEY (`id`);
-
- --
- -- Indexes for table `TBL_STANDARD_resource`
- --
- ALTER TABLE `TBL_STANDARD_RESOURCE`
-   ADD PRIMARY KEY (`id`),
-   ADD KEY `FK_n0r46alou8q4tpjpnctfpabjo` (`standard_id`);
-
- --
- -- Indexes for table `TBL_sys_file`
- --
- ALTER TABLE `TBL_SYS_FILE`
-   ADD PRIMARY KEY (`id`);
-
- --
- -- Indexes for table `TBL_SYS_function`
- --
- ALTER TABLE `TBL_SYS_FUNCTION`
-   ADD PRIMARY KEY (`id`),
-   ADD KEY `FK_itqdcta4ccyss9hycawsgucrm` (`menu_id`);
-
- --
- -- Indexes for table `TBL_SYS_menu`
- --
- ALTER TABLE `TBL_SYS_MENU`
-   ADD PRIMARY KEY (`ID`),
-   ADD KEY `FK_i69suv95ch4ud7irsd1lregqy` (`MODULE_ID`);
-
- --
- -- Indexes for table `TBL_SYS_module`
- --
- ALTER TABLE `TBL_SYS_MODULE`
-   ADD PRIMARY KEY (`id`);
-
- --
- -- Indexes for table `TBL_SYS_operation_log`
- --
- ALTER TABLE `TBL_SYS_OPERATION_LOG`
-   ADD PRIMARY KEY (`id`);
-
- --
- -- Indexes for table `TBL_SYS_organization`
- --
- ALTER TABLE `TBL_SYS_ORGANIZATION`
-   ADD PRIMARY KEY (`id`);
-
- --
- -- Indexes for table `TBL_SYS_ORGANIZATION_user`
- --
- ALTER TABLE `TBL_SYS_ORGANIZATION_USER`
-   ADD KEY `FK_1xf5y20elkka13pumi8r2f8r4` (`organization_id`),
-   ADD KEY `FK_syj426syoggn9kae85kspa0se` (`user_id`);
-
- --
- -- Indexes for table `TBL_SYS_ROLE`
- --
- ALTER TABLE `TBL_SYS_ROLE`
-   ADD PRIMARY KEY (`id`);
-
- --
- -- Indexes for table `TBL_SYS_ROLE_FUNCTION`
- --
- ALTER TABLE `TBL_SYS_ROLE_FUNCTION`
-   ADD KEY `FK_tgfnmsm51p1heid7qd9wcghxj` (`function_id`),
-   ADD KEY `FK_2r3mx5cv4q1eu6i7oex4a7y65` (`role_id`);
-
- --
- -- Indexes for table `TBL_SYS_role_user`
- --
- ALTER TABLE `TBL_SYS_ROLE_USER`
-   ADD KEY `FK_4rbt5lhjoqj0r268ur0gcurf2` (`role_id`),
-   ADD KEY `FK_44m1qqntwycmydgmmdcmagdn3` (`user_id`);
-
- --
- -- Indexes for table `TBL_SYS_user`
- --
- ALTER TABLE `TBL_SYS_USER`
-   ADD PRIMARY KEY (`ID`);
-
- --
- -- Indexes for table `TBL_topic`
- --
- ALTER TABLE `TBL_TOPIC`
-   ADD PRIMARY KEY (`id`),
-   ADD KEY `FK_o8dc6e1w8u4ci53fjycq0fm3q` (`project_id`);
-
- --
- -- 限制表 `TBL_standard_RESOURCE`
- --
- ALTER TABLE `TBL_STANDARD_RESOURCE`
-   ADD CONSTRAINT `FK_c7j3o7u37sq49med5mw7x7qq6` FOREIGN KEY (`id`) REFERENCES `TBL_SYS_FILE` (`id`),
-   ADD CONSTRAINT `FK_n0r46alou8q4tpjpnctfpabjo` FOREIGN KEY (`standard_id`) REFERENCES `TBL_STANDARD` (`id`);
-
- --
- -- 限制表 `TBL_SYS_role_user`
- --
- ALTER TABLE `TBL_SYS_ROLE_USER`
-   ADD CONSTRAINT `FK_44m1qqntwycmydgmmdcmagdn3` FOREIGN KEY (`user_id`) REFERENCES `TBL_SYS_USER` (`ID`),
-   ADD CONSTRAINT `FK_4rbt5lhjoqj0r268ur0gcurf2` FOREIGN KEY (`role_id`) REFERENCES `TBL_SYS_ROLE` (`id`);
-
-
-
-
 
 # --
 # -- Indexes for table `act_evt_log`
