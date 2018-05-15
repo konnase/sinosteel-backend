@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
   mysql:
-    image: 'registry.njuics.cn/mysql/orchardup/mysql:latest'
+    image: 'mysql:latest'
     ports:
       - '3306:3306'
 #    volumes:
