@@ -55,6 +55,7 @@ framework-example中的将Project和Knowledge整合进framework中，代码结�
     - 做数据缓存的模块
     - 主要是缓存一些查询结果，下次查询更快
 ## 项目运行
+java版本使用java 8及以下的版本，java 9之后的版本缺少了一些包。
 - 在项目根目录执行`mvn clean package -DskipTests`打包
 - 如果没有mysql数据库，执行`docker-compose up -d`启动mysql镜像，docker-compose.yml文件如下：
 ```yaml
@@ -64,12 +65,12 @@ services:
   mysql:
     image: 'mysql:latest'
     ports:
-      - '33006:3306'
+      - '3306:3306'
     volumes:
       - '~/mnt/mysql/:/var/lib/mysql/'
     environment:
       - MYSQL_ROOT_PASSWORD=mysql
-      - MYSQL_DATABASE=fitech
+      - MYSQL_DATABASE=test
 ```
 - 执行 `mvn spring-boot:run`启动项目
 
