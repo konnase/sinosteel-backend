@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.sinosteel.domain.User;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
@@ -21,13 +22,14 @@ import com.sinosteel.framework.utils.string.StringUtil;
 
 public class RequestArgumentResolver implements HandlerMethodArgumentResolver 
 {
+	private static Logger logger = Logger.getLogger(RequestArgumentResolver.class);
 	@Autowired
 	private UserService userService;
 	
     @Override
     public boolean supportsParameter(MethodParameter methodParameter)
     {
-    	System.out.println("请求是否为Request类型："+methodParameter.getParameterType().equals(Request.class));
+    	logger.info("请求是否为Request类型："+methodParameter.getParameterType().equals(Request.class));
     	//如果controller的形参为Request对象，则返回true，表示需要处理该参数分解，调用下面的resolveArgument处理
         return methodParameter.getParameterType().equals(Request.class);
     }
@@ -36,13 +38,15 @@ public class RequestArgumentResolver implements HandlerMethodArgumentResolver
     public Object resolveArgument(MethodParameter methodParameter, ModelAndViewContainer mavContainer,
                                   NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception 
     {
+
     	Request request = new Request();
 
     	//通过请求中的参数username设置request的user
-    	String username = webRequest.getParameter("username");
-    	User user = userService.getUserByUsername(username);
-    	request.setUser(user);
-    	
+		String username = webRequest.getParameter("username");
+		User user = userService.getUserByUsername(username);
+		request.setUser(user);
+		logger.info("request user: "+username);
+
     	String[] descriptions = webRequest.getDescription(true).split(";");
     	String uri = descriptions[0].split("=")[1];
     	String client = descriptions[1].split("=")[1];
@@ -54,6 +58,7 @@ public class RequestArgumentResolver implements HandlerMethodArgumentResolver
     	
         String paramsString = webRequest.getParameter("params");
         JSONObject params = JSONObject.parseObject(paramsString);
+        logger.info("params: "+params);
         
         request.setParams(params);
 

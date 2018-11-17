@@ -42,7 +42,6 @@ public class AuthController
 			//前端根据这些modules决定侧边栏显示哪些modules
 			userJson.put("modules", functionService.getFunctionsHierarchies(user.getFunctions()));
 			logger.info("处理完成");
-			System.out.println("处理完成--systemout");
 
 			String digest = HmacSHA256Util.digest(user.getUsername(), user.getPassword());
 			userJson.put("clientDigest", digest);

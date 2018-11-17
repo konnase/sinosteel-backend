@@ -2,14 +2,14 @@ version: '3.2'
 
 services:
   mysql:
-    image: 'mysql:latest'
+    image: 'registry.njuics.cn/mysql/orchardup/mysql:latest'
     ports:
       - '3306:3306'
-#    volumes:
-#      - '~/mnt/mysql/:/var/lib/mysql/'
+    volumes:
+      - '~/mnt/mysql1/:/var/lib/mysql/'
     environment:
       - MYSQL_ROOT_PASSWORD=mysql
-      - MYSQL_DATABASE=test
+      - MYSQL_DATABASE=fitech
 #  redis:
 #    image: 'redis:latest'
 #    environment:

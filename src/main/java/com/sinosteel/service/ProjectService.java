@@ -8,6 +8,7 @@ import com.sinosteel.framework.helpers.pagination.Pager;
 import com.sinosteel.framework.utils.json.JsonUtil;
 import com.sinosteel.framework.utils.string.StringUtil;
 import com.sinosteel.repository.ProjectRepository;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ import java.util.HashMap;
 @Service
 public class ProjectService extends BaseService<Project>
 {
+	private static Logger logger = Logger.getLogger(ProjectService.class);
 	@Autowired
 	private ProjectRepository projectRepository;
 	
@@ -31,7 +33,7 @@ public class ProjectService extends BaseService<Project>
 		
 		if(params != null)
 		{
-			System.out.println("请求传入的参数："+params.toJSONString());
+			logger.info("请求传入的参数："+params.toJSONString());
 			JSONArray startTime = params.getJSONArray("startTime");
 			if(startTime != null && startTime.size() == 2)
 			{
@@ -86,8 +88,8 @@ public class ProjectService extends BaseService<Project>
 			pager = JSONObject.toJavaObject(params.getJSONObject("pagination"), Pager.class);
 		}
 		catch (Exception e){
-			System.out.println("没找到pager，遇到错误啦");
-			System.out.println(e);
+			logger.info("没找到pager，遇到错误啦");
+			logger.info(e);
 		}
 		PageResult<Project> pageResult = projectRepository.executeHql(hqlBuilder.toString(), paramsMap, pager);
 		
