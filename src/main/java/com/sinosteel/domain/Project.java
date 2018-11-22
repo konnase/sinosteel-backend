@@ -1,6 +1,7 @@
 package com.sinosteel.domain;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 import java.util.List;
@@ -34,12 +35,14 @@ public class Project extends BaseEntity
 	
 	@Column(name = "COMMENT")
 	private String comment;
-	
+
+	@ApiModelProperty(hidden=true)
 	@OneToMany
 	@JoinColumn(name = "PROJECT_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
 	@JSONField(serialize = false)
 	private List<Topic> topics;
-	
+
+	@ApiModelProperty(hidden=true)
 	@OneToMany
 	@JoinColumn(name = "PROJECT_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
 	@JSONField(serialize = false)

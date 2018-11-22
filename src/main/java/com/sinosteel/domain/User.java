@@ -1,5 +1,7 @@
 package com.sinosteel.domain;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +20,7 @@ public class User extends BaseEntity
 	private String password;
 	
 	private String salt;
-	
+
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "TBL_SYS_ROLE_USER", joinColumns = 
 	{
@@ -28,7 +30,7 @@ public class User extends BaseEntity
 		@JoinColumn(name = "ROLE_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
 	})
 	private List<Role> roles;
-	
+
 	@Transient
 	private List<Function> functions;
 

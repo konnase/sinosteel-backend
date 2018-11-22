@@ -1,5 +1,7 @@
 package com.sinosteel.domain;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -19,6 +21,7 @@ public class Module extends BaseEntity
 	private String moduleIcon;
 	
 	@Transient
+	@ApiModelProperty(hidden=true)
 	private List<Menu> menus;
 
 	public String getModulePath() {

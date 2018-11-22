@@ -2,6 +2,7 @@ package com.sinosteel.domain;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.sinosteel.framework.helpers.hierarchy.domain.Hierarchy;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 import java.util.List;
@@ -17,7 +18,8 @@ public class Menu extends Hierarchy<Menu>
 	
 	@Column(name = "MENU_ICON")
 	private String menuIcon;
-	
+
+	@ApiModelProperty(hidden=true)
 	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "MENU_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
 	private List<Function> functions;

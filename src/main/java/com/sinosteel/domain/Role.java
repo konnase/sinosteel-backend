@@ -1,6 +1,7 @@
 package com.sinosteel.domain;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 import java.util.List;
@@ -19,7 +20,8 @@ public class Role extends BaseEntity
 	
 	@Column(name = "DESCRIPTION")
 	private String description;
-	
+
+	@ApiModelProperty(hidden=true)
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "TBL_SYS_ROLE_FUNCTION", joinColumns = 
 	{

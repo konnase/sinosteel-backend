@@ -88,7 +88,7 @@ public class ProjectService extends BaseService<Project>
 			pager = JSONObject.toJavaObject(params.getJSONObject("pagination"), Pager.class);
 		}
 		catch (Exception e){
-			logger.info("没找到pager，遇到错误啦");
+			logger.info("params is null");
 			logger.info(e);
 		}
 		PageResult<Project> pageResult = projectRepository.executeHql(hqlBuilder.toString(), paramsMap, pager);

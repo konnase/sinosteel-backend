@@ -1,11 +1,15 @@
 package com.sinosteel.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import com.sinosteel.domain.Organization;
 import com.sinosteel.domain.Role;
 import com.sinosteel.domain.User;
+import com.sinosteel.framework.helpers.hierarchy.helper.HierarchyHelper;
+import com.sinosteel.framework.helpers.pagination.PageResult;
+import com.sinosteel.framework.helpers.pagination.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -81,7 +85,65 @@ public class UserService extends BaseService<User>
 	{
 		return JsonUtil.toJSONArray(userRepository.findAll());
 	}
-	
+
+	public JSONObject queryUsers(JSONObject params)
+	{
+		StringBuilder hqlBuilder = new StringBuilder("FROM User user WHERE 1 = 1 ");
+		HashMap<String, Object> paramsMap = new HashMap<String, Object>();
+
+		if(params != null)
+		{
+			String organizationId = params.getString("organizationId");
+			if(!StringUtil.isEmpty(organizationId))
+			{
+				List<String> organizationIds = HierarchyHelper.getHierarchyIds(organizationRepository, organizationId);
+				List<String> userIds = organizationUserMapper.findUserIdsByOrganizationIds(organizationIds);
+
+				if(userIds.size() != 0)
+				{
+					hqlBuilder.append("AND user.id IN (");
+					for(int i = 0; i < userIds.size(); i++)
+					{
+						String userId = userIds.get(i);
+						hqlBuilder.append("'" + userId + "'");
+
+						if(i != userIds.size() - 1)
+						{
+							hqlBuilder.append(", ");
+						}
+						else
+						{
+							hqlBuilder.append(")");
+						}
+					}
+				}
+				else
+				{
+					hqlBuilder.append("AND user.id = 'empty result list' "); //在没有部门ID的情况下，不返回任何结果; 因druid的原因，不能写1 = -1，会被认为是sql注入，未来会进一步配置
+				}
+			}
+			else
+			{
+				hqlBuilder.append("AND user.id = 'empty result list' "); //在没有部门ID的情况下，不返回任何结果; 因druid的原因，不能写1 = -1，会被认为是sql注入，未来会进一步配置
+			}
+		}
+
+		Pager pager = JSONObject.toJavaObject(params.getJSONObject("pagination"), Pager.class);
+		PageResult<User> queryResult = userRepository.executeHql(hqlBuilder.toString(), paramsMap, pager);
+
+		JSONObject resultJson = queryResult.toJSONObject();
+		JSONArray data = resultJson.getJSONArray("data");
+		for(int i = 0; i < data.size(); i++)
+		{
+			JSONObject userJson = data.getJSONObject(i);
+			String userId = userJson.getString("id");
+
+			List<String> organizationIds = organizationUserMapper.findOrganizationIdsByUserId(userId);
+			userJson.put("organizationIds", JsonUtil.toStringJsonArray(organizationIds));
+		}
+
+		return resultJson;
+	}
 
 	
 	/**新添加的用户密码固定为123456*/

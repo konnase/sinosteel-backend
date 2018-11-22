@@ -10,9 +10,9 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=mysql
       - MYSQL_DATABASE=fitech
-#  redis:
-#    image: 'redis:latest'
-#    environment:
-#      - ALLOW_EMPTY_PASSWORD=yes
-#    ports:
-#      - '6379:6379'
+  redis:
+    image: 'redis:latest'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - '6379:6379'
