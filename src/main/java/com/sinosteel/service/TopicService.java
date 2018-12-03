@@ -67,7 +67,7 @@ public class TopicService extends BaseService<Topic>
 		topic.setId(UUID.randomUUID().toString());
 
 		String projectId = params.getString("projectId");
-		Project project = projectRepository.findOne(projectId);
+		Project project = projectRepository.findById(projectId).get();
 		topic.setProject(project);
 		
 		this.saveEntity(topic, user);
@@ -78,7 +78,7 @@ public class TopicService extends BaseService<Topic>
 		Topic topic = JSONObject.toJavaObject(params, Topic.class);
 		
 		String topicId = topic.getId();
-		Project project = topicRepository.findOne(topicId).getProject();
+		Project project = topicRepository.findById(topicId).get().getProject();
 		topic.setProject(project);
 		
 		this.updateEntity(topic, user);

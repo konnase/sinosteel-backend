@@ -56,7 +56,7 @@ public class BaseService<T extends BaseEntity>
 	
 	public void deleteEntity(String id)
 	{
-		baseRepository.delete(id);
+		baseRepository.deleteById(id);
 	}
 	
 	public void deleteEntity(T entity)
@@ -85,7 +85,7 @@ public class BaseService<T extends BaseEntity>
 
 	public T findEntityById(String id)
 	{
-		return baseRepository.findOne(id);
+		return baseRepository.findById(id).get();
 	}
 	
 	public List<T> findAll()

@@ -90,7 +90,7 @@ public class OrganizationService extends BaseService<Organization>
 
 			if(!StringUtil.isEmpty(principalId))
 			{
-				User principal = userRepository.findOne(principalId);
+				User principal = userRepository.findById(principalId).get();
 				
 				organizationJson.put("principalId", principalId);
 				organizationJson.put("principalName", principal.getName());
@@ -112,7 +112,7 @@ public class OrganizationService extends BaseService<Organization>
 		String parentId = params.getString("parentId");
 		if(!StringUtil.isEmpty(parentId)) //实际上，这种情况不可能出现
 		{
-			Organization parent = organizationRepository.findOne(parentId);
+			Organization parent = organizationRepository.findById(parentId).get();
 			organization.setParent(parent);
 		}
 		
@@ -121,7 +121,7 @@ public class OrganizationService extends BaseService<Organization>
 		String principalId = params.getString("principalId");
 		if(!StringUtil.isEmpty(principalId))
 		{
-			User principal = userRepository.findOne(principalId);
+			User principal = userRepository.findById(principalId).get();
 			
 			if(principal != null)
 			{
@@ -137,7 +137,7 @@ public class OrganizationService extends BaseService<Organization>
 		String principalId = params.getString("principalId");
 		if(!StringUtil.isEmpty(principalId))
 		{
-			User principal = userRepository.findOne(principalId);
+			User principal = userRepository.findById(principalId).get();
 			
 			if(principal != null)
 			{
@@ -150,7 +150,7 @@ public class OrganizationService extends BaseService<Organization>
 	public void deleteOrganization(JSONObject params)
 	{
 		String organizationId = params.getString("id");
-		organizationRepository.delete(organizationId);
+		organizationRepository.deleteById(organizationId);
 		
 		organizationUserMapper.deleteOrganizationUserByOrganizationId(organizationId);
 		

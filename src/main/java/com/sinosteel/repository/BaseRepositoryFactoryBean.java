@@ -14,7 +14,11 @@ import java.io.Serializable;
 
 public class BaseRepositoryFactoryBean<R extends JpaRepository<T, String>, T extends BaseEntity> extends JpaRepositoryFactoryBean<R, T, String>
 {
-	@Override
+    public BaseRepositoryFactoryBean(Class<? extends R> repositoryInterface) {
+        super(repositoryInterface);
+    }
+
+    @Override
     protected RepositoryFactorySupport createRepositoryFactory(EntityManager em) 
 	{
         return new BaseRepositoryFactory<T, String>(em);

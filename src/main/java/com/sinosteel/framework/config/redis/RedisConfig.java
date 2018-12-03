@@ -24,6 +24,7 @@ public class RedisConfig extends CachingConfigurerSupport
 
     private long maxWaitMillis;
 
+
     private String password;
 
     @Bean
@@ -90,11 +91,8 @@ public class RedisConfig extends CachingConfigurerSupport
     public String getPassword() {
         return password;
     }
-
-	/*
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	*/
 }
 

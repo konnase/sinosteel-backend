@@ -32,4 +32,5 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, S
 	<U> PageResult<U> executeSql(String sql, HashMap<String, Object> paramsMap, Pager pager);
 	
 	PageResult<T> executeHql(String hql, HashMap<String, Object> paramsMap, Pager pager);
+
 }

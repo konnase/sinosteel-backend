@@ -58,7 +58,7 @@ public class MilestoneService extends BaseService<Milestone>
 		milestone.setId(UUID.randomUUID().toString());
 		
 		String projectId = params.getString("projectId");
-		Project project = projectRepository.findOne(projectId);
+		Project project = projectRepository.findById(projectId).get();
 		milestone.setProject(project);
 		
 		this.saveEntity(milestone, user);
@@ -69,7 +69,7 @@ public class MilestoneService extends BaseService<Milestone>
 		Milestone milestone = JSONObject.toJavaObject(params, Milestone.class);
 		
 		String milestoneId = milestone.getId();
-		Project project = milestoneRepository.findOne(milestoneId).getProject();
+		Project project = milestoneRepository.findById(milestoneId).get().getProject();
 		milestone.setProject(project);
 		
 		this.updateEntity(milestone, user);

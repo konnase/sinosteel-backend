@@ -168,3 +168,6 @@ buildNumber.properties
 
 # End of https://www.gitignore.io/api/macos,maven,eclipse,intellij
 /app.log
+app.*
+.idea
+framework.iml

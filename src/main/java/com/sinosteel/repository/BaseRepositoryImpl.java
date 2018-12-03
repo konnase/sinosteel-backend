@@ -99,7 +99,7 @@ public class BaseRepositoryImpl<T extends BaseEntity> extends SimpleJpaRepositor
 		PageResult<T> queryResult = new PageResult<T>(total, data);
 		return queryResult;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public <U> List<U> executeHqlIndicatingType(String hql, HashMap<String, Object> paramsMap)

@@ -33,7 +33,7 @@ public class HierarchyHelper
 					T parent = findHierarchyById(parentId, layer);
 					if(parent == null)
 					{
-						parent = hierarchyRepository.findOne(parentId);
+						parent = hierarchyRepository.findById(parentId).get();
 						layer.add(parent);
 					}
 

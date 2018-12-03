@@ -107,6 +107,6 @@ public class StandardService extends BaseService<Standard>
 	public void deleteStandard(JSONObject params)
 	{
 		String standardId = params.getString("id");
-		standardRepository.delete(standardId);
+		standardRepository.deleteById(standardId);
 	}
 }
