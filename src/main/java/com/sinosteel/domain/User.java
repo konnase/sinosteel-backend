@@ -9,95 +9,91 @@ import java.util.List;
 @Entity
 @Table(name = "TBL_SYS_USER")
 @Inheritance(strategy = InheritanceType.JOINED)
-public class User extends BaseEntity
-{
-	private static final long serialVersionUID = 6536862440622576274L;
-	
-	@Column(name = "USERNAME")
-	private String username;
-	
-	@Column(name = "PASSWORD")
-	private String password;
-	
-	private String salt;
+public class User extends BaseEntity {
+    private static final long serialVersionUID = 6536862440622576274L;
 
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "TBL_SYS_ROLE_USER", joinColumns = 
-	{
-		@JoinColumn(name = "USER_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
-	}, inverseJoinColumns = 
-	{
-		@JoinColumn(name = "ROLE_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
-	})
-	private List<Role> roles;
+    @Column(name = "USERNAME")
+    private String username;
 
-	@Transient
-	private List<Function> functions;
+    @Column(name = "PASSWORD")
+    private String password;
 
-	public String getUsername() {
-		return username;
-	}
+    private String salt;
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "TBL_SYS_ROLE_USER", joinColumns =
+            {
+                    @JoinColumn(name = "USER_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
+            }, inverseJoinColumns =
+            {
+                    @JoinColumn(name = "ROLE_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
+            })
+    private List<Role> roles;
 
-	public String getPassword() {
-		return password;
-	}
+    @Transient
+    private List<Function> functions;
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public List<Role> getRoles() {
-		return roles;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	//根据用户的角色给用户赋功能
-	public List<Function> getFunctions()
-	{
-		List<Role> roles = this.roles;
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-		if(roles != null && roles.size() != 0)
-		{
-			List<Function> functions = new ArrayList<Function>();
+    public List<Role> getRoles() {
+        return roles;
+    }
 
-			for(Role role : roles)
-			{
-				List<Function> subFunctions = role.getFunctions();
-				
-				functions.addAll(subFunctions);
-			}
-			
-			return functions;
-		}
-		
-		return this.functions;
-	}
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
 
-	public void setFunctions(List<Function> functions) {
-		this.functions = functions;
-	}
+    //根据用户的角色给用户赋功能
+    public List<Function> getFunctions() {
+        List<Role> roles = this.roles;
 
-	public String getSalt() {
-		return salt;
-	}
+        if (roles != null && roles.size() != 0) {
+            List<Function> functions = new ArrayList<Function>();
 
-	public void setSalt(String salt) {
-		this.salt = salt;
-	}
-	
-	/**
+            for (Role role : roles) {
+                List<Function> subFunctions = role.getFunctions();
+
+                functions.addAll(subFunctions);
+            }
+
+            return functions;
+        }
+
+        return this.functions;
+    }
+
+    public void setFunctions(List<Function> functions) {
+        this.functions = functions;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    /**
      * 密码盐.
+     *
      * @return
      */
-    public String getCredentialsSalt()
-    {
-       return this.username + this.salt;
+    public String getCredentialsSalt() {
+        return this.username + this.salt;
     }
 }

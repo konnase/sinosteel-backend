@@ -12,45 +12,38 @@ import org.springframework.data.repository.core.support.RepositoryFactorySupport
 import javax.persistence.EntityManager;
 import java.io.Serializable;
 
-public class BaseRepositoryFactoryBean<R extends JpaRepository<T, String>, T extends BaseEntity> extends JpaRepositoryFactoryBean<R, T, String>
-{
+public class BaseRepositoryFactoryBean<R extends JpaRepository<T, String>, T extends BaseEntity> extends JpaRepositoryFactoryBean<R, T, String> {
     public BaseRepositoryFactoryBean(Class<? extends R> repositoryInterface) {
         super(repositoryInterface);
     }
 
     @Override
-    protected RepositoryFactorySupport createRepositoryFactory(EntityManager em) 
-	{
+    protected RepositoryFactorySupport createRepositoryFactory(EntityManager em) {
         return new BaseRepositoryFactory<T, String>(em);
     }
 
-    private static class BaseRepositoryFactory<T extends BaseEntity, I extends Serializable> extends JpaRepositoryFactory
-    {
+    private static class BaseRepositoryFactory<T extends BaseEntity, I extends Serializable> extends JpaRepositoryFactory {
         private final EntityManager em;
 
-        public BaseRepositoryFactory(EntityManager em) 
-        {
+        public BaseRepositoryFactory(EntityManager em) {
             super(em);
             this.em = em;
         }
-        
+
         @SuppressWarnings("unchecked")
-		@Override
-        protected Object getTargetRepository(RepositoryInformation metadata) 
-        {
+        @Override
+        protected Object getTargetRepository(RepositoryInformation metadata) {
             return new BaseRepositoryImpl<T>((Class<T>) metadata.getDomainType(), em);
         }
 
         @SuppressWarnings("unchecked")
-		@Override
-        protected SimpleJpaRepository<T, String> getTargetRepository(RepositoryInformation metadata, EntityManager em) 
-        {
+        @Override
+        protected SimpleJpaRepository<T, String> getTargetRepository(RepositoryInformation metadata, EntityManager em) {
             return new BaseRepositoryImpl<T>((Class<T>) metadata.getDomainType(), em);
         }
 
         @Override
-        protected Class<?> getRepositoryBaseClass(RepositoryMetadata metadata)
-        {
+        protected Class<?> getRepositoryBaseClass(RepositoryMetadata metadata) {
             return BaseRepositoryImpl.class;
         }
     }

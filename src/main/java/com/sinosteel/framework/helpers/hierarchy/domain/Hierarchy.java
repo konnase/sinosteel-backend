@@ -10,40 +10,39 @@ import javax.persistence.Transient;
 
 
 @MappedSuperclass
-public class Hierarchy<T extends Hierarchy<T>> extends BaseEntity
-{
-	private static final long serialVersionUID = 4998039521607719893L;
+public class Hierarchy<T extends Hierarchy<T>> extends BaseEntity {
+    private static final long serialVersionUID = 4998039521607719893L;
 
-	@Column(name = "PARENT_ID")
-	private String parentId;
-	
-	@Transient
-	private List<T> children;
-	
-	@Transient
-	private Hierarchy<T> parent;
+    @Column(name = "PARENT_ID")
+    private String parentId;
 
-	public String getParentId() {
-		return parentId;
-	}
+    @Transient
+    private List<T> children;
 
-	public void setParentId(String parentId) {
-		this.parentId = parentId;
-	}
+    @Transient
+    private Hierarchy<T> parent;
 
-	public List<T> getChildren() {
-		return children;
-	}
+    public String getParentId() {
+        return parentId;
+    }
 
-	public void setChildren(List<T> children) {
-		this.children = children;
-	}
+    public void setParentId(String parentId) {
+        this.parentId = parentId;
+    }
 
-	public Hierarchy<T> getParent() {
-		return parent;
-	}
+    public List<T> getChildren() {
+        return children;
+    }
 
-	public void setParent(Hierarchy<T> parent) {
-		this.parent = parent;
-	}
+    public void setChildren(List<T> children) {
+        this.children = children;
+    }
+
+    public Hierarchy<T> getParent() {
+        return parent;
+    }
+
+    public void setParent(Hierarchy<T> parent) {
+        this.parent = parent;
+    }
 }

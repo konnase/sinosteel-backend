@@ -6,54 +6,53 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "TBL_SYS_FUNCTION")
-public class Function extends BaseEntity
-{
-	private static final long serialVersionUID = -5461914450646641917L;
-	
-	@Column(name = "FUNCTION_PATH")
-	@JSONField(serialize = false)
-	private String functionPath;
-	
-	@Column(name = "FUNCTION_STRING")
-	private String functionString;
+public class Function extends BaseEntity {
+    private static final long serialVersionUID = -5461914450646641917L;
 
-	@Column(name = "FUNCTION_CODE")
-	private String functionCode;
-	
-	@ManyToOne
-	@JoinColumn(name = "MENU_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
-	@JSONField(serialize = false)
-	private Menu menu;
+    @Column(name = "FUNCTION_PATH")
+    @JSONField(serialize = false)
+    private String functionPath;
 
-	public Menu getMenu() {
-		return menu;
-	}
+    @Column(name = "FUNCTION_STRING")
+    private String functionString;
 
-	public void setMenu(Menu menu) {
-		this.menu = menu;
-	}
+    @Column(name = "FUNCTION_CODE")
+    private String functionCode;
 
-	public String getFunctionPath() {
-		return functionPath;
-	}
+    @ManyToOne
+    @JoinColumn(name = "MENU_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
+    @JSONField(serialize = false)
+    private Menu menu;
 
-	public void setFunctionPath(String functionPath) {
-		this.functionPath = functionPath;
-	}
+    public Menu getMenu() {
+        return menu;
+    }
 
-	public String getFunctionString() {
-		return functionString;
-	}
+    public void setMenu(Menu menu) {
+        this.menu = menu;
+    }
 
-	public void setFunctionString(String functionString) {
-		this.functionString = functionString;
-	}
+    public String getFunctionPath() {
+        return functionPath;
+    }
 
-	public String getFunctionCode() {
-		return functionCode;
-	}
+    public void setFunctionPath(String functionPath) {
+        this.functionPath = functionPath;
+    }
 
-	public void setFunctionCode(String functionCode) {
-		this.functionCode = functionCode;
-	}
+    public String getFunctionString() {
+        return functionString;
+    }
+
+    public void setFunctionString(String functionString) {
+        this.functionString = functionString;
+    }
+
+    public String getFunctionCode() {
+        return functionCode;
+    }
+
+    public void setFunctionCode(String functionCode) {
+        this.functionCode = functionCode;
+    }
 }

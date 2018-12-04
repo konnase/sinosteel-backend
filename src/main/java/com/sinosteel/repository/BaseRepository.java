@@ -15,22 +15,21 @@ import java.util.List;
 
 @Component(value = "baseRepository")
 @NoRepositoryBean
-public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, String>, JpaSpecificationExecutor<T>, PagingAndSortingRepository<T, String>
-{
-	boolean support(String modelType);
-	
-	EntityManager getEntityManager();
-	
-	<U> List<U> executeSql(String sql, HashMap<String, Object> paramsMap);
-	
-	int executeSql(String sql);
-	
-	List<T> executeHql(String hql, HashMap<String, Object> paramsMap);
+public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, String>, JpaSpecificationExecutor<T>, PagingAndSortingRepository<T, String> {
+    boolean support(String modelType);
 
-	<U> List<U> executeHqlIndicatingType(String hql, HashMap<String, Object> paramsMap);
-	
-	<U> PageResult<U> executeSql(String sql, HashMap<String, Object> paramsMap, Pager pager);
-	
-	PageResult<T> executeHql(String hql, HashMap<String, Object> paramsMap, Pager pager);
+    EntityManager getEntityManager();
+
+    <U> List<U> executeSql(String sql, HashMap<String, Object> paramsMap);
+
+    int executeSql(String sql);
+
+    List<T> executeHql(String hql, HashMap<String, Object> paramsMap);
+
+    <U> List<U> executeHqlIndicatingType(String hql, HashMap<String, Object> paramsMap);
+
+    <U> PageResult<U> executeSql(String sql, HashMap<String, Object> paramsMap, Pager pager);
+
+    PageResult<T> executeHql(String hql, HashMap<String, Object> paramsMap, Pager pager);
 
 }

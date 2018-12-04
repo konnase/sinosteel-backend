@@ -12,8 +12,7 @@ import redis.clients.jedis.JedisPoolConfig;
 @Configuration
 @PropertySource("config/redis.properties")
 @ConfigurationProperties(prefix = "spring.redis")
-public class RedisConfig extends CachingConfigurerSupport
-{
+public class RedisConfig extends CachingConfigurerSupport {
     private String hostName;
 
     private int port;
@@ -28,8 +27,7 @@ public class RedisConfig extends CachingConfigurerSupport
     private String password;
 
     @Bean
-    public JedisPool jedisPool()
-    {
+    public JedisPool jedisPool() {
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
         jedisPoolConfig.setMaxIdle(maxIdle);
         jedisPoolConfig.setMaxWaitMillis(maxWaitMillis);
@@ -40,8 +38,7 @@ public class RedisConfig extends CachingConfigurerSupport
     }
 
     @Bean
-    public JedisPoolConfig jedisPoolConfig ()
-    {
+    public JedisPoolConfig jedisPoolConfig() {
         JedisPoolConfig config = new JedisPoolConfig();
         config.setMaxIdle(maxIdle);
         config.setMaxWaitMillis(maxWaitMillis);
@@ -91,8 +88,9 @@ public class RedisConfig extends CachingConfigurerSupport
     public String getPassword() {
         return password;
     }
-	public void setPassword(String password) {
-		this.password = password;
-	}
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
 

@@ -7,11 +7,10 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 @PropertySource("config/datasource.properties")
 @ConfigurationProperties(prefix = "spring.datasource")
-public class DateSourceConfig
-{
-	/**
-	 * Reserverd for customized usage
-	 */
+public class DateSourceConfig {
+    /**
+     * Reserverd for customized usage
+     */
 	
 	/*
     private String driverClassName;

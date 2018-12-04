@@ -11,30 +11,25 @@ import com.sinosteel.framework.core.web.ResponseType;
 import com.sinosteel.service.FunctionService;
 
 @RestController
-public class FunctionController extends BaseController
-{
-	@Autowired
-	private FunctionService functionService;
-	
-	@RequestMapping(value = "/getAllFunctionsHierarchies")
-	public Response getAllFunctionsHierarchies(Request request)
-	{
-		Response response = new Response();
-		
-		try
-		{
-			response.status = ResponseType.SUCCESS;
-			response.data = functionService.getAllFunctionsHierarchies();
-			response.message = "";
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-			
-			response.status = ResponseType.FAILURE;
-			response.message = e.getMessage();
-		}
-		
-		return response;
-	}
+public class FunctionController extends BaseController {
+    @Autowired
+    private FunctionService functionService;
+
+    @RequestMapping(value = "/getAllFunctionsHierarchies")
+    public Response getAllFunctionsHierarchies(Request request) {
+        Response response = new Response();
+
+        try {
+            response.status = ResponseType.SUCCESS;
+            response.data = functionService.getAllFunctionsHierarchies();
+            response.message = "";
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            response.status = ResponseType.FAILURE;
+            response.message = e.getMessage();
+        }
+
+        return response;
+    }
 }

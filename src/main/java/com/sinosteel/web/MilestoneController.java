@@ -11,96 +11,79 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class MilestoneController extends BaseController
-{
-	@Autowired
-	private MilestoneService milestoneService;
+public class MilestoneController extends BaseController {
+    @Autowired
+    private MilestoneService milestoneService;
 
-	@RequestMapping(value = "/queryMilestones")
-	public Response queryMilestones(Request request)
-	{
-		Response response = new Response();
-		
-		try
-		{
-			response.status = ResponseType.SUCCESS;
-			response.data = milestoneService.queryMilestones(request.getParams());
-			response.message = "";
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-			
-			response.status = ResponseType.FAILURE;
-			response.message = e.getMessage();
-		}
-		
-		return response;
-	}
+    @RequestMapping(value = "/queryMilestones")
+    public Response queryMilestones(Request request) {
+        Response response = new Response();
 
-	@RequestMapping(value = "/addMilestone")
-	public Response addMilestone(Request request)
-	{
-		Response response = new Response();
-		
-		try
-		{
-			milestoneService.addMilestone(request.getParams(), request.getUser());
-			
-			response.status = ResponseType.SUCCESS;
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-			
-			response.status = ResponseType.FAILURE;
-			response.message = "SERVER_ERROR";
-		}
-		
-		return response;
-	}
-	
-	@RequestMapping(value = "/editMilestone")
-	public Response editMilestone(Request request)
-	{
-		Response response = new Response();
-		
-		try
-		{
-			milestoneService.editMilestone(request.getParams(), request.getUser());
-			
-			response.status = ResponseType.SUCCESS;
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-			
-			response.status = ResponseType.FAILURE;
-			response.message = "SERVER_ERROR";
-		}
-		
-		return response;
-	}
-	
-	@RequestMapping(value = "/deleteMilestone")
-	public Response deleteMilestone(Request request)
-	{
-		Response response = new Response();
-		
-		try
-		{
-			milestoneService.deleteEntity(request.getParams().getString("id"));
-			
-			response.status = ResponseType.SUCCESS;
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-			
-			response.status = ResponseType.FAILURE;
-			response.message = e.getMessage();
-		}
-		
-		return response;
-	}
+        try {
+            response.status = ResponseType.SUCCESS;
+            response.data = milestoneService.queryMilestones(request.getParams());
+            response.message = "";
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            response.status = ResponseType.FAILURE;
+            response.message = e.getMessage();
+        }
+
+        return response;
+    }
+
+    @RequestMapping(value = "/addMilestone")
+    public Response addMilestone(Request request) {
+        Response response = new Response();
+
+        try {
+            milestoneService.addMilestone(request.getParams(), request.getUser());
+
+            response.status = ResponseType.SUCCESS;
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            response.status = ResponseType.FAILURE;
+            response.message = "SERVER_ERROR";
+        }
+
+        return response;
+    }
+
+    @RequestMapping(value = "/editMilestone")
+    public Response editMilestone(Request request) {
+        Response response = new Response();
+
+        try {
+            milestoneService.editMilestone(request.getParams(), request.getUser());
+
+            response.status = ResponseType.SUCCESS;
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            response.status = ResponseType.FAILURE;
+            response.message = "SERVER_ERROR";
+        }
+
+        return response;
+    }
+
+    @RequestMapping(value = "/deleteMilestone")
+    public Response deleteMilestone(Request request) {
+        Response response = new Response();
+
+        try {
+            milestoneService.deleteEntity(request.getParams().getString("id"));
+
+            response.status = ResponseType.SUCCESS;
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            response.status = ResponseType.FAILURE;
+            response.message = e.getMessage();
+        }
+
+        return response;
+    }
 }

@@ -8,61 +8,60 @@ import java.util.List;
 
 @Entity
 @Table(name = "TBL_SYS_ROLE")
-public class Role extends BaseEntity
-{
-	private static final long serialVersionUID = 2857988380369247437L;
+public class Role extends BaseEntity {
+    private static final long serialVersionUID = 2857988380369247437L;
 
-	@Column(name = "ROLE_NAME")
-	private String roleName;
-	
-	@Column(name = "ROLE_STRING")
-	private String roleString;
-	
-	@Column(name = "DESCRIPTION")
-	private String description;
+    @Column(name = "ROLE_NAME")
+    private String roleName;
 
-	@ApiModelProperty(hidden=true)
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "TBL_SYS_ROLE_FUNCTION", joinColumns = 
-	{
-		@JoinColumn(name = "ROLE_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
-	}, inverseJoinColumns = 
-	{
-		@JoinColumn(name = "FUNCTION_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
-	})
-	@JSONField(deserialize = false)
-	private List<Function> functions;
-	
-	public String getRoleName() {
-		return roleName;
-	}
+    @Column(name = "ROLE_STRING")
+    private String roleString;
 
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-	}
+    @Column(name = "DESCRIPTION")
+    private String description;
 
-	public List<Function> getFunctions() {
-		return functions;
-	}
+    @ApiModelProperty(hidden = true)
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "TBL_SYS_ROLE_FUNCTION", joinColumns =
+            {
+                    @JoinColumn(name = "ROLE_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
+            }, inverseJoinColumns =
+            {
+                    @JoinColumn(name = "FUNCTION_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
+            })
+    @JSONField(deserialize = false)
+    private List<Function> functions;
 
-	@JSONField(deserialize = false)
-	public void setFunctions(List<Function> functions) {
-		this.functions = functions;
-	}
+    public String getRoleName() {
+        return roleName;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public List<Function> getFunctions() {
+        return functions;
+    }
 
-	public String getRoleString() {
-		return roleString;
-	}
+    @JSONField(deserialize = false)
+    public void setFunctions(List<Function> functions) {
+        this.functions = functions;
+    }
 
-	public void setRoleString(String roleString) {
-		this.roleString = roleString;
-	}
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getRoleString() {
+        return roleString;
+    }
+
+    public void setRoleString(String roleString) {
+        this.roleString = roleString;
+    }
 }

@@ -13,10 +13,10 @@ import java.util.Collection;
  */
 public interface MovieRepository extends Neo4jRepository<Movie, Long> {
 
-	Movie findByTitle(@Param("title") String title);
+    Movie findByTitle(@Param("title") String title);
 
-	Collection<Movie> findByTitleLike(@Param("title") String title);
+    Collection<Movie> findByTitleLike(@Param("title") String title);
 
     @Query("MATCH (m:Movie)<-[r:ACTED_IN]-(a:Person) RETURN m,r,a LIMIT {limit}")
-	Collection<Movie> graph(@Param("limit") int limit);
+    Collection<Movie> graph(@Param("limit") int limit);
 }

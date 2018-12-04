@@ -5,7 +5,6 @@ import com.sinosteel.framework.helpers.hierarchy.domain.HierarchyRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MenuRepository extends HierarchyRepository<Menu>
-{
+public interface MenuRepository extends HierarchyRepository<Menu> {
 
 }

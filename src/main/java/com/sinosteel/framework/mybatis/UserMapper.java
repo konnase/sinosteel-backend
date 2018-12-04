@@ -10,18 +10,17 @@ import org.apache.ibatis.annotations.Select;
 
 
 @Mapper
-public interface UserMapper 
-{
-	@Result
-	@Select("SELECT * FROM TBL_SYS_ORGANIZATION WHERE ID IN "
-			+ "(SELECT ORGANIZATION_ID FROM TBL_SYS_ORGANIZATION_USER WHERE USER_ID IN "
-			+ "(SELECT ID FROM TBL_SYS_USER WHERE USERNAME = #{username}))")
-	List<Organization> getOrganizations(String username);
-	
-	@Select("SELECT org.ID FROM TBL_SYS_ORGANIZATION org "
-			+ "WHERE EXISTS "
-			+ "(SELECT 1 FROM TBL_SYS_ORGANIZATION_USER org_user "
-			+ "WHERE org.ID = org_user.ORGANIZATION_ID "
-			+ "AND org_user.USER_ID = #{userId})")
-	List<String> getOrganizationIdsByUserId(@Param("userId")String userId);
+public interface UserMapper {
+    @Result
+    @Select("SELECT * FROM TBL_SYS_ORGANIZATION WHERE ID IN "
+            + "(SELECT ORGANIZATION_ID FROM TBL_SYS_ORGANIZATION_USER WHERE USER_ID IN "
+            + "(SELECT ID FROM TBL_SYS_USER WHERE USERNAME = #{username}))")
+    List<Organization> getOrganizations(String username);
+
+    @Select("SELECT org.ID FROM TBL_SYS_ORGANIZATION org "
+            + "WHERE EXISTS "
+            + "(SELECT 1 FROM TBL_SYS_ORGANIZATION_USER org_user "
+            + "WHERE org.ID = org_user.ORGANIZATION_ID "
+            + "AND org_user.USER_ID = #{userId})")
+    List<String> getOrganizationIdsByUserId(@Param("userId") String userId);
 }

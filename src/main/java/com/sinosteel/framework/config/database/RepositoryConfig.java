@@ -5,11 +5,10 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @PropertySource("config/datasource.properties")
-public class RepositoryConfig
-{
-	/**
-	 * Reserverd for customized usage
-	 */
+public class RepositoryConfig {
+    /**
+     * Reserverd for customized usage
+     */
 	
 	/*
 	@Autowired

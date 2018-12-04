@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface FunctionRepository extends BaseRepository<Function>
-{
+public interface FunctionRepository extends BaseRepository<Function> {
 
 }

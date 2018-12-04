@@ -12,13 +12,11 @@ import org.springframework.stereotype.Component;
 @Configuration
 @PropertySource("config/system.properties")
 @Component
-public class SystemConfig
-{
-	@Autowired
-	private Environment env;
-	
-	public String getProperty(String propertyName)
-	{
-		return env.getProperty(propertyName);
-	}
+public class SystemConfig {
+    @Autowired
+    private Environment env;
+
+    public String getProperty(String propertyName) {
+        return env.getProperty(propertyName);
+    }
 }

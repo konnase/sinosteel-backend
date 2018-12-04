@@ -6,84 +6,83 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "TBL_SYS_OPERATION_LOG")
-public class OperationLog extends BaseEntity
-{
-	private static final long serialVersionUID = -2820158853327418625L;
-	
-	@Column(name = "URI")
-	private String uri;
-	
-	@Column(name = "CLIENT")
-	private String client;
-	
-	@Column(name = "USERNAME")
-	private String username;
-	
-	@Column(name = "DATE_TIME")
-	private String dateTime;
-	
-	@Column(name = "PARAMS")
-	private String params;
-	
-	@Column(name = "FILE_NAMES")
-	private String fileNames;
-	
-	@Column(name = "RESPONSE_STATUS")
-	private String responseStatus;
+public class OperationLog extends BaseEntity {
+    private static final long serialVersionUID = -2820158853327418625L;
 
-	public String getUri() {
-		return uri;
-	}
+    @Column(name = "URI")
+    private String uri;
 
-	public void setUri(String uri) {
-		this.uri = uri;
-	}
+    @Column(name = "CLIENT")
+    private String client;
 
-	public String getClient() {
-		return client;
-	}
+    @Column(name = "USERNAME")
+    private String username;
 
-	public void setClient(String client) {
-		this.client = client;
-	}
+    @Column(name = "DATE_TIME")
+    private String dateTime;
 
-	public String getUsername() {
-		return username;
-	}
+    @Column(name = "PARAMS")
+    private String params;
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    @Column(name = "FILE_NAMES")
+    private String fileNames;
 
-	public String getDateTime() {
-		return dateTime;
-	}
+    @Column(name = "RESPONSE_STATUS")
+    private String responseStatus;
 
-	public void setDateTime(String dateTime) {
-		this.dateTime = dateTime;
-	}
+    public String getUri() {
+        return uri;
+    }
 
-	public String getFileNames() {
-		return fileNames;
-	}
+    public void setUri(String uri) {
+        this.uri = uri;
+    }
 
-	public void setFileNames(String fileNames) {
-		this.fileNames = fileNames;
-	}
+    public String getClient() {
+        return client;
+    }
 
-	public String getResponseStatus() {
-		return responseStatus;
-	}
+    public void setClient(String client) {
+        this.client = client;
+    }
 
-	public void setResponseStatus(String responseStatus) {
-		this.responseStatus = responseStatus;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public String getParams() {
-		return params;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public void setParams(String params) {
-		this.params = params;
-	}
+    public String getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(String dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    public String getFileNames() {
+        return fileNames;
+    }
+
+    public void setFileNames(String fileNames) {
+        this.fileNames = fileNames;
+    }
+
+    public String getResponseStatus() {
+        return responseStatus;
+    }
+
+    public void setResponseStatus(String responseStatus) {
+        this.responseStatus = responseStatus;
+    }
+
+    public String getParams() {
+        return params;
+    }
+
+    public void setParams(String params) {
+        this.params = params;
+    }
 }

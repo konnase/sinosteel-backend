@@ -1,6 +1,5 @@
 package com.sinosteel.domain;
 
-public class SystemLog 
-{
+public class SystemLog {
 
 }

@@ -13,35 +13,35 @@ import java.util.List;
  * @author Mark Angrish
  */
 @NodeEntity
-public class Person extends BaseEntity{
+public class Person extends BaseEntity {
 
-	private String name;
-	private int born;
+    private String name;
+    private int born;
 
-	@Relationship(type = "ACTED_IN")
-	private List<Movie> movies = new ArrayList<>();
+    @Relationship(type = "ACTED_IN")
+    private List<Movie> movies = new ArrayList<>();
 
-	public Person() {
-	}
+    public Person() {
+    }
 
-	public Person(String name, int born) {
-		this.name = name;
-		this.born = born;
-	}
+    public Person(String name, int born) {
+        this.name = name;
+        this.born = born;
+    }
 
-	public String getId() {
-		return super.getId();
-	}
+    public String getId() {
+        return super.getId();
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public int getBorn() {
-		return born;
-	}
+    public int getBorn() {
+        return born;
+    }
 
-	public List<Movie> getMovies() {
-		return movies;
-	}
+    public List<Movie> getMovies() {
+        return movies;
+    }
 }

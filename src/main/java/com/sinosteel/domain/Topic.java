@@ -6,86 +6,85 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "TBL_TOPIC")
-public class Topic extends BaseEntity
-{
-	private static final long serialVersionUID = 2823520571030592510L;
+public class Topic extends BaseEntity {
+    private static final long serialVersionUID = 2823520571030592510L;
 
-	@Column(name = "TOPIC_NAME")
-	private String topicName;
-	
-	@Column(name = "LOCATION")
-	private String location;
-	
-	@Column(name = "START_TIME")
-	private String startTime;
-	
-	@Column(name = "DIRECTOR_ID")
-	private String directorId;
-	
-	@Column(name = "COMMENT")
-	private String comment;
-	
-	@ManyToOne
-	@JoinColumn(name = "PROJECT_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
-	@JSONField(serialize = false, deserialize = false)
-	private Project project;
+    @Column(name = "TOPIC_NAME")
+    private String topicName;
 
-	@Transient
-	private String projectId;
-	
-	public String getTopicName() {
-		return topicName;
-	}
+    @Column(name = "LOCATION")
+    private String location;
 
-	public void setTopicName(String topicName) {
-		this.topicName = topicName;
-	}
+    @Column(name = "START_TIME")
+    private String startTime;
 
-	public Project getProject() {
-		return project;
-	}
+    @Column(name = "DIRECTOR_ID")
+    private String directorId;
 
-	public void setProject(Project project) {
-		this.project = project;
-	}
+    @Column(name = "COMMENT")
+    private String comment;
 
-	public String getStartTime() {
-		return startTime;
-	}
+    @ManyToOne
+    @JoinColumn(name = "PROJECT_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
+    @JSONField(serialize = false, deserialize = false)
+    private Project project;
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
+    @Transient
+    private String projectId;
 
-	public String getDirectorId() {
-		return directorId;
-	}
+    public String getTopicName() {
+        return topicName;
+    }
 
-	public void setDirectorId(String directorId) {
-		this.directorId = directorId;
-	}
+    public void setTopicName(String topicName) {
+        this.topicName = topicName;
+    }
 
-	public String getComment() {
-		return comment;
-	}
+    public Project getProject() {
+        return project;
+    }
 
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
+    public void setProject(Project project) {
+        this.project = project;
+    }
 
-	public String getLocation() {
-		return location;
-	}
+    public String getStartTime() {
+        return startTime;
+    }
 
-	public void setLocation(String location) {
-		this.location = location;
-	}
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
 
-	public String getProjectId() {
-		return this.project.getId();
-	}
+    public String getDirectorId() {
+        return directorId;
+    }
 
-	public void setProjectId(String projectId) {
-		this.projectId = projectId;
-	}
+    public void setDirectorId(String directorId) {
+        this.directorId = directorId;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getProjectId() {
+        return this.project.getId();
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
 }

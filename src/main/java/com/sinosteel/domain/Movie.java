@@ -13,52 +13,53 @@ import java.util.List;
  * @author Mark Angrish
  */
 @NodeEntity
-public class Movie extends BaseEntity{
+public class Movie extends BaseEntity {
 
-	private String title;
-	private int released;
-	private String tagline;
+    private String title;
+    private int released;
+    private String tagline;
 
-	@JsonIgnoreProperties("movie")
-	@Relationship(type = "ACTED_IN", direction = Relationship.INCOMING)
-	private List<ActorRole> actorRoles;
+    @JsonIgnoreProperties("movie")
+    @Relationship(type = "ACTED_IN", direction = Relationship.INCOMING)
+    private List<ActorRole> actorRoles;
 
-	public Movie() {
-	}
+    public Movie() {
+    }
 
-	public Movie(String title, int released, String tagline) {
-		this.title = title;
-		this.released = released;
-		this.tagline = tagline;
-	}
+    public Movie(String title, int released, String tagline) {
+        this.title = title;
+        this.released = released;
+        this.tagline = tagline;
+    }
 
-	public String getId() {
-		return super.getId();
-	}
-	public void setId(String id) {
-		super.setId(id);
-	}
+    public String getId() {
+        return super.getId();
+    }
 
-	public String getTitle() {
-		return title;
-	}
+    public void setId(String id) {
+        super.setId(id);
+    }
 
-	public int getReleased() {
-		return released;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public String getTagline() {
-		return tagline;
-	}
+    public int getReleased() {
+        return released;
+    }
 
-	public List<ActorRole> getActorRoles() {
-		return actorRoles;
-	}
+    public String getTagline() {
+        return tagline;
+    }
 
-	public void addRole(ActorRole actorRole) {
-		if (this.actorRoles == null) {
-			this.actorRoles = new ArrayList<>();
-		}
-		this.actorRoles.add(actorRole);
-	}
+    public List<ActorRole> getActorRoles() {
+        return actorRoles;
+    }
+
+    public void addRole(ActorRole actorRole) {
+        if (this.actorRoles == null) {
+            this.actorRoles = new ArrayList<>();
+        }
+        this.actorRoles.add(actorRole);
+    }
 }

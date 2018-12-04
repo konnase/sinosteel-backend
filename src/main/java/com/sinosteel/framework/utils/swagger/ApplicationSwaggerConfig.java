@@ -34,7 +34,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * Java config for Springfox swagger documentation plugin
  *
  * @author Vitaliy Fedoriv
- *
  */
 
 @Configuration

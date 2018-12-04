@@ -9,55 +9,54 @@ import java.util.List;
 
 @Entity
 @Table(name = "TBL_SYS_MENU")
-public class Menu extends Hierarchy<Menu>
-{
-	private static final long serialVersionUID = -2328400315682798977L;
-	
-	@Column(name = "MENU_PATH")
-	private String menuPath;
-	
-	@Column(name = "MENU_ICON")
-	private String menuIcon;
+public class Menu extends Hierarchy<Menu> {
+    private static final long serialVersionUID = -2328400315682798977L;
 
-	@ApiModelProperty(hidden=true)
-	@OneToMany(fetch = FetchType.EAGER)
-	@JoinColumn(name = "MENU_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
-	private List<Function> functions;
+    @Column(name = "MENU_PATH")
+    private String menuPath;
 
-	@ManyToOne
-	@JoinColumn(name = "MODULE_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
-	@JSONField(serialize = false)
-	private Module module;
+    @Column(name = "MENU_ICON")
+    private String menuIcon;
 
-	public String getMenuPath() {
-		return menuPath;
-	}
+    @ApiModelProperty(hidden = true)
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "MENU_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
+    private List<Function> functions;
 
-	public void setMenuPath(String menuPath) {
-		this.menuPath = menuPath;
-	}
+    @ManyToOne
+    @JoinColumn(name = "MODULE_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
+    @JSONField(serialize = false)
+    private Module module;
 
-	public String getMenuIcon() {
-		return menuIcon;
-	}
+    public String getMenuPath() {
+        return menuPath;
+    }
 
-	public void setMenuIcon(String menuIcon) {
-		this.menuIcon = menuIcon;
-	}
+    public void setMenuPath(String menuPath) {
+        this.menuPath = menuPath;
+    }
 
-	public Module getModule() {
-		return module;
-	}
+    public String getMenuIcon() {
+        return menuIcon;
+    }
 
-	public void setModule(Module module) {
-		this.module = module;
-	}
+    public void setMenuIcon(String menuIcon) {
+        this.menuIcon = menuIcon;
+    }
 
-	public List<Function> getFunctions() {
-		return functions;
-	}
+    public Module getModule() {
+        return module;
+    }
 
-	public void setFunctions(List<Function> functions) {
-		this.functions = functions;
-	}
+    public void setModule(Module module) {
+        this.module = module;
+    }
+
+    public List<Function> getFunctions() {
+        return functions;
+    }
+
+    public void setFunctions(List<Function> functions) {
+        this.functions = functions;
+    }
 }

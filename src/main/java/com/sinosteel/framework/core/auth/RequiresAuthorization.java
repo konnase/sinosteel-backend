@@ -13,15 +13,14 @@ import com.sinosteel.framework.core.web.RequestType;
 @Documented
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface RequiresAuthorization
-{
-	RequestType requestType();
-	
-	AuthorizationScope queryScope() default AuthorizationScope.ORGANIZATION;
-	
-	AuthorizationScope editScope() default AuthorizationScope.USER;
-	
-	AuthorizationScope deleteScope() default AuthorizationScope.USER;
-	
-	Class<? extends BaseService<? extends BaseEntity>> serviceClass();
+public @interface RequiresAuthorization {
+    RequestType requestType();
+
+    AuthorizationScope queryScope() default AuthorizationScope.ORGANIZATION;
+
+    AuthorizationScope editScope() default AuthorizationScope.USER;
+
+    AuthorizationScope deleteScope() default AuthorizationScope.USER;
+
+    Class<? extends BaseService<? extends BaseEntity>> serviceClass();
 }

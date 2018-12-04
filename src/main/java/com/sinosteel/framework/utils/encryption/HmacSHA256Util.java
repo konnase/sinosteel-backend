@@ -9,51 +9,37 @@ import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.codec.binary.Hex;
 
-public class HmacSHA256Util 
-{
-	public static String digest(String key, String content) 
-	{
-        try 
-        {
+public class HmacSHA256Util {
+    public static String digest(String key, String content) {
+        try {
             Mac mac = Mac.getInstance("HmacSHA256");
             byte[] secretByte = key.getBytes("utf-8");
             byte[] dataBytes = content.getBytes("utf-8");
- 
+
             SecretKey secret = new SecretKeySpec(secretByte, "HMACSHA256");
             mac.init(secret);
- 
+
             byte[] doFinal = mac.doFinal(dataBytes);
             byte[] hexB = new Hex().encode(doFinal);
             return new String(hexB, "utf-8");
-        } 
-        catch (Exception e) 
-        {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
- 
+
     @SuppressWarnings("unchecked")
-    public static String digest(String key, Map<String, ?> map) 
-    {
+    public static String digest(String key, Map<String, ?> map) {
         StringBuilder s = new StringBuilder();
-        for(Object values : map.values()) 
-        {
-            if(values instanceof String[])
-            {
-                for(String value : (String[])values) 
-                {
+        for (Object values : map.values()) {
+            if (values instanceof String[]) {
+                for (String value : (String[]) values) {
                     s.append(value);
                 }
-            } 
-            else if(values instanceof List) 
-            {
-                for(String value : (List<String>)values)
-                {
+            } else if (values instanceof List) {
+                for (String value : (List<String>) values) {
                     s.append(value);
                 }
-            } 
-            else 
-            {
+            } else {
                 s.append(values);
             }
         }

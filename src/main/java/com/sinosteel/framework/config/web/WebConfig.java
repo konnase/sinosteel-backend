@@ -17,31 +17,27 @@ import com.sinosteel.framework.core.web.RequestArgumentResolver;
 
  */
 @Configuration
-public class WebConfig extends WebMvcConfigurerAdapter
-{
-	//自定义参数解析器，RequestArgumentResolver主要负责执行controller前参数的准备工作.
-	@Bean
-	public RequestArgumentResolver requestArgumentResolver()
-	{
-		return new RequestArgumentResolver();
-	}
-	
-	@Override
-    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) 
-	{
-		argumentResolvers.add(requestArgumentResolver());
+public class WebConfig extends WebMvcConfigurerAdapter {
+    //自定义参数解析器，RequestArgumentResolver主要负责执行controller前参数的准备工作.
+    @Bean
+    public RequestArgumentResolver requestArgumentResolver() {
+        return new RequestArgumentResolver();
+    }
+
+    @Override
+    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
+        argumentResolvers.add(requestArgumentResolver());
         super.addArgumentResolvers(argumentResolvers);
     }
-	
-	@Override
-	public void configureMessageConverters(List<HttpMessageConverter<?>> converters)
-	{ 
+
+    @Override
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         FastJsonConfig fastJsonConfig = new FastJsonConfig();
         fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
-        
+
         FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
         fastConverter.setFastJsonConfig(fastJsonConfig);
-      
+
         converters.add(fastConverter);
-	}
+    }
 }

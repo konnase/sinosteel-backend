@@ -2,6 +2,7 @@ package com.sinosteel.framework.config.druid;
 
 //import org.springframework.boot.context.embedded.FilterRegistrationBean;
 //import org.springframework.boot.context.embedded.ServletRegistrationBean;
+
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -16,11 +17,9 @@ Druid是Java语言中最好的数据库连接池。Druid能够提供强大的监
  */
 @Configuration
 @PropertySource("config/datasource.properties")
-public class DruidConfig 
-{	
-	@Bean
-    public ServletRegistrationBean druidServlet()
-	{
+public class DruidConfig {
+    @Bean
+    public ServletRegistrationBean druidServlet() {
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
 
         servletRegistrationBean.addInitParameter("allow", "localhost");
@@ -33,8 +32,7 @@ public class DruidConfig
     }
 
     @Bean
-    public FilterRegistrationBean filterRegistrationBean()
-    {
+    public FilterRegistrationBean filterRegistrationBean() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
         filterRegistrationBean.setFilter(new WebStatFilter());
         filterRegistrationBean.addUrlPatterns("/*");

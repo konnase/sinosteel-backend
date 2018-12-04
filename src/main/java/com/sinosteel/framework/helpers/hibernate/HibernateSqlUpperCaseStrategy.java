@@ -5,8 +5,11 @@ import org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl;
 import org.hibernate.engine.jdbc.env.spi.JdbcEnvironment;
 import org.springframework.stereotype.Component;
 
+import java.util.logging.Logger;
+
 
 public class HibernateSqlUpperCaseStrategy extends PhysicalNamingStrategyStandardImpl {
+    private static final Logger logger = Logger.getLogger(HibernateSqlUpperCaseStrategy.class.getName());
     private static final long serialVersionUID = 1383021413247872469L;
 
 
@@ -15,7 +18,7 @@ public class HibernateSqlUpperCaseStrategy extends PhysicalNamingStrategyStandar
         // 将表名全部转换成大写
         String tableName = name.getText().toUpperCase();
 
-        System.out.println("修改后的表名："+tableName);
+        logger.info("修改后的表名：" + tableName);
 
         return name.toIdentifier(tableName);
     }

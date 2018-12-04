@@ -17,11 +17,11 @@ import java.util.Map;
 @RequestMapping("/")
 public class MovieController {
 
-	private final MovieService movieService;
-	
-	public MovieController(MovieService movieService) {
-		this.movieService = movieService;
-	}
+    private final MovieService movieService;
+
+    public MovieController(MovieService movieService) {
+        this.movieService = movieService;
+    }
 
     @GetMapping("/movie")
     public Movie findByTitle(@RequestParam String title) {
@@ -34,7 +34,7 @@ public class MovieController {
     }
 
     @GetMapping("/graph")
-	public Map<String, Object> graph(@RequestParam(value = "limit",required = false) Integer limit) {
-		return movieService.graph(limit == null ? 100 : limit);
-	}
+    public Map<String, Object> graph(@RequestParam(value = "limit", required = false) Integer limit) {
+        return movieService.graph(limit == null ? 100 : limit);
+    }
 }

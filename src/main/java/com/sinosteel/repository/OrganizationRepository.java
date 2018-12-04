@@ -7,7 +7,6 @@ import com.sinosteel.framework.helpers.hierarchy.domain.HierarchyRepository;
 
 
 @Repository
-public interface OrganizationRepository extends HierarchyRepository<Organization>
-{
+public interface OrganizationRepository extends HierarchyRepository<Organization> {
 
 }

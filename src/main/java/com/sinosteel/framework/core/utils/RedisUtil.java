@@ -9,45 +9,37 @@ import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializer;
 
-public class RedisUtil
-{
-	@Autowired  
-    private static RedisTemplate<String, String> redisTemplate;  
-      
-    public static boolean set(final String key, final String value) 
-    {  
-        boolean result = redisTemplate.execute(new RedisCallback<Boolean>() 
-        {  
-            @Override  
-            public Boolean doInRedis(RedisConnection connection) throws DataAccessException 
-            {  
-                RedisSerializer<String> serializer = redisTemplate.getStringSerializer();  
-                connection.set(serializer.serialize(key), serializer.serialize(value));  
-                return true;  
-            }  
-        });  
-        
-        return result;  
-    }  
-  
-    public static String get(final String key)
-    {  
-        String result = redisTemplate.execute(new RedisCallback<String>() 
-        {  
-            @Override  
-            public String doInRedis(RedisConnection connection) throws DataAccessException 
-            {  
-                RedisSerializer<String> serializer = redisTemplate.getStringSerializer();  
-                byte[] value =  connection.get(serializer.serialize(key));  
-                return serializer.deserialize(value);  
-            }  
-        });  
-        return result;  
-    }  
-  
-    public static boolean expire(final String key, long expire) 
-    {  
-        return redisTemplate.expire(key, expire, TimeUnit.SECONDS);  
+public class RedisUtil {
+    @Autowired
+    private static RedisTemplate<String, String> redisTemplate;
+
+    public static boolean set(final String key, final String value) {
+        boolean result = redisTemplate.execute(new RedisCallback<Boolean>() {
+            @Override
+            public Boolean doInRedis(RedisConnection connection) throws DataAccessException {
+                RedisSerializer<String> serializer = redisTemplate.getStringSerializer();
+                connection.set(serializer.serialize(key), serializer.serialize(value));
+                return true;
+            }
+        });
+
+        return result;
+    }
+
+    public static String get(final String key) {
+        String result = redisTemplate.execute(new RedisCallback<String>() {
+            @Override
+            public String doInRedis(RedisConnection connection) throws DataAccessException {
+                RedisSerializer<String> serializer = redisTemplate.getStringSerializer();
+                byte[] value = connection.get(serializer.serialize(key));
+                return serializer.deserialize(value);
+            }
+        });
+        return result;
+    }
+
+    public static boolean expire(final String key, long expire) {
+        return redisTemplate.expire(key, expire, TimeUnit.SECONDS);
     }  
   
     /*

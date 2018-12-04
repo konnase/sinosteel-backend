@@ -8,123 +8,122 @@ import java.util.List;
 
 @Entity
 @Table(name = "TBL_PROJECT")
-public class Project extends BaseEntity
-{
-	private static final long serialVersionUID = 8921532687244475870L;
-	
-	@Column(name = "PROJECT_NAME")
-	private String projectName;
-	
-	@Column(name = "START_TIME")
-	private String startTime;
-	
-	@Column(name = "DIRECTOR_ID")
-	private String directorId;
-	
-	@Column(name = "location")
-	private String location;
-	
-	@Column(name = "EXPECTED_DURATION")
-	private Integer expectedDuration;
-	
-	@Column(name = "ACTUAL_DURATION")
-	private Integer actualDuration;
-	
-	@Column(name = "COMPLETED")
-	private String completed;
-	
-	@Column(name = "COMMENT")
-	private String comment;
+public class Project extends BaseEntity {
+    private static final long serialVersionUID = 8921532687244475870L;
 
-	@ApiModelProperty(hidden=true)
-	@OneToMany
-	@JoinColumn(name = "PROJECT_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
-	@JSONField(serialize = false)
-	private List<Topic> topics;
+    @Column(name = "PROJECT_NAME")
+    private String projectName;
 
-	@ApiModelProperty(hidden=true)
-	@OneToMany
-	@JoinColumn(name = "PROJECT_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
-	@JSONField(serialize = false)
-	private List<Milestone> milestones;
- 
-	public String getProjectName() {
-		return projectName;
-	}
+    @Column(name = "START_TIME")
+    private String startTime;
 
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-	}
+    @Column(name = "DIRECTOR_ID")
+    private String directorId;
 
-	public String getDirectorId() {
-		return directorId;
-	}
+    @Column(name = "location")
+    private String location;
 
-	public void setDirectorId(String directorId) {
-		this.directorId = directorId;
-	}
+    @Column(name = "EXPECTED_DURATION")
+    private Integer expectedDuration;
 
-	public String getStartTime() {
-		return startTime;
-	}
+    @Column(name = "ACTUAL_DURATION")
+    private Integer actualDuration;
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
+    @Column(name = "COMPLETED")
+    private String completed;
 
-	public String getLocation() {
-		return location;
-	}
+    @Column(name = "COMMENT")
+    private String comment;
 
-	public void setLocation(String location) {
-		this.location = location;
-	}
+    @ApiModelProperty(hidden = true)
+    @OneToMany
+    @JoinColumn(name = "PROJECT_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
+    @JSONField(serialize = false)
+    private List<Topic> topics;
 
-	public Integer getExpectedDuration() {
-		return expectedDuration;
-	}
+    @ApiModelProperty(hidden = true)
+    @OneToMany
+    @JoinColumn(name = "PROJECT_ID", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
+    @JSONField(serialize = false)
+    private List<Milestone> milestones;
 
-	public void setExpectedDuration(Integer expectedDuration) {
-		this.expectedDuration = expectedDuration;
-	}
+    public String getProjectName() {
+        return projectName;
+    }
 
-	public Integer getActualDuration() {
-		return actualDuration;
-	}
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
 
-	public void setActualDuration(Integer actualDuration) {
-		this.actualDuration = actualDuration;
-	}
+    public String getDirectorId() {
+        return directorId;
+    }
 
-	public String getCompleted() {
-		return completed;
-	}
+    public void setDirectorId(String directorId) {
+        this.directorId = directorId;
+    }
 
-	public void setCompleted(String completed) {
-		this.completed = completed;
-	}
+    public String getStartTime() {
+        return startTime;
+    }
 
-	public String getComment() {
-		return comment;
-	}
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
 
-	public List<Topic> getTopics() {
-		return topics;
-	}
+    public String getLocation() {
+        return location;
+    }
 
-	public void setTopics(List<Topic> topics) {
-		this.topics = topics;
-	}
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
-	public List<Milestone> getMilestones() {
-		return milestones;
-	}
+    public Integer getExpectedDuration() {
+        return expectedDuration;
+    }
 
-	public void setMilestones(List<Milestone> milestones) {
-		this.milestones = milestones;
-	}
+    public void setExpectedDuration(Integer expectedDuration) {
+        this.expectedDuration = expectedDuration;
+    }
 
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
+    public Integer getActualDuration() {
+        return actualDuration;
+    }
+
+    public void setActualDuration(Integer actualDuration) {
+        this.actualDuration = actualDuration;
+    }
+
+    public String getCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(String completed) {
+        this.completed = completed;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public List<Topic> getTopics() {
+        return topics;
+    }
+
+    public void setTopics(List<Topic> topics) {
+        this.topics = topics;
+    }
+
+    public List<Milestone> getMilestones() {
+        return milestones;
+    }
+
+    public void setMilestones(List<Milestone> milestones) {
+        this.milestones = milestones;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 }

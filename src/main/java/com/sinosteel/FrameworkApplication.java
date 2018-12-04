@@ -23,11 +23,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @EnableJpaRepositories(repositoryFactoryBeanClass = BaseRepositoryFactoryBean.class)
 @EnableNeo4jRepositories("com.sinosteel.repository")
-public class FrameworkApplication
-{
-	public static void main(String[] args)
-	{
-		SpringApplication.run(FrameworkApplication.class, args);
+public class FrameworkApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(FrameworkApplication.class, args);
 //		new SpringApplicationBuilder(FrameworkApplication.class).web(true).run(args);
-	}
+    }
 }
